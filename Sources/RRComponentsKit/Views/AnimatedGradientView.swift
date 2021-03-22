@@ -7,45 +7,44 @@
 
 import SwiftUI
 
-/// This view has been taken from the article by Caleb Wells. I played around with the code to adjust it for my requirements.
-/// Link to the article - SwiftUI colorful button animation https://dev.to/cr_wells/swiftui-colorful-button-animation-5a4m
+/// This view has been taken from the repository by Nate Farrell. I played around with the code to adjust it for my requirements.
+/// Link to the code - https://github.com/nfarrell36/RotatingGradientView/blob/main/RotatingGradientView.swift
+/// Link to the article on which it is based on - https://nerdyak.tech/development/2019/09/30/animating-gradients-swiftui.html
 
-public struct AnimatedGradientView: View {
-    private let initialPoint = UnitPoint(x: 0, y: 0)
-    private let endPoint = UnitPoint(x: 8, y: 0)
-    private let negativeEndPoint = UnitPoint(x: -8, y: 0)
+struct AnimatedGradientView: View {
+    @State private var gradientA: [Color] = [.red, .orange]
+    @State private var gradientB: [Color] = [.red, .orange]
 
-    @State private var start = UnitPoint(x: 0, y: 0)
-    @State private var end = UnitPoint(x: 8, y: 0)
+    @State private var firstPlane: Bool = true
+    @State private var colorIndex: Int = 1
 
-    public var body: some View {
-        LinearGradient(gradient: Gradient(colors: colors), startPoint: start, endPoint: end)
-            .animation(Animation.easeInOut(duration: 20).repeatForever())
-            .onAppear {
-                self.start = endPoint
-                self.end = initialPoint
-                self.start = negativeEndPoint
-                self.end = endPoint
+    private let gradients: [[Color]] = [[.orange, .yellow],
+                                [.yellow, .green],
+                                [.green, .blue],
+                                [.blue, .purple],
+                                [.red, .orange]]
+
+    private let timer = Timer.publish(every: 10.0, on: .main, in: .common).autoconnect()
+
+    var body: some View {
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: gradientA), startPoint: .bottomTrailing, endPoint: .topLeading)
+            LinearGradient(gradient: Gradient(colors: gradientB), startPoint: .bottomTrailing, endPoint: .topLeading)
+                .opacity(self.firstPlane ? 0 : 1)
+        }
+        .animation(.easeInOut(duration: 10.0))
+        .onReceive(timer) { _ in
+            if colorIndex == gradients.count {
+                colorIndex = 0
             }
+
+            setGradient(gradient: gradients[colorIndex])
+            colorIndex += 1
+        }
     }
 
-    private let colors: [Color] =
-        [Color(.systemBlue),
-         Color(.systemPurple),
-         Color(.systemIndigo),
-         Color(.systemIndigo),
-         Color(.systemRed),
-         Color(.systemPurple),
-         Color(.systemBlue),
-         Color(.systemPurple),
-         Color(.systemRed),
-         Color(.systemPurple),
-         Color(.systemIndigo),
-         Color(.systemIndigo)]
-}
-
-struct AnimatedGradientView_Previews: PreviewProvider {
-    static var previews: some View {
-        AnimatedGradientView()
+    private func setGradient(gradient: [Color]) {
+        firstPlane ? (gradientB = gradient) : (gradientA = gradient)
+        firstPlane = !firstPlane
     }
 }

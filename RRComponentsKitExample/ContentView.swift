@@ -10,6 +10,6 @@ import RRComponentsKit
 
 struct ContentView: View {
     var body: some View {
-        RotatingGradientButton(title: "Evaluate", action: {})
+        GradientButton(title: "Evaluate", action: {})
     }
 }
