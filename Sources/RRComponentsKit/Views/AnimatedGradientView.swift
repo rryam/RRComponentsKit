@@ -24,7 +24,7 @@ struct AnimatedGradientView: View {
                                 [.blue, .purple],
                                 [.red, .orange]]
 
-    private let timer = Timer.publish(every: 10.0, on: .main, in: .common).autoconnect()
+    private let timer = Timer.publish(every: 5.0, on: .main, in: .common).autoconnect()
 
     var body: some View {
         ZStack {
@@ -32,7 +32,7 @@ struct AnimatedGradientView: View {
             LinearGradient(gradient: Gradient(colors: gradientB), startPoint: .bottomTrailing, endPoint: .topLeading)
                 .opacity(self.firstPlane ? 0 : 1)
         }
-        .animation(.easeInOut(duration: 10.0))
+        .animation(.easeInOut(duration: 5.0))
         .onReceive(timer) { _ in
             if colorIndex == gradients.count {
                 colorIndex = 0
