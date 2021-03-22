@@ -13,6 +13,9 @@
 		0A08277B2608DA2C009FC75C /* RRComponentsKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "RRComponentsKit::RRComponentsKit::Product" /* RRComponentsKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0A0827802608DA37009FC75C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08277F2608DA37009FC75C /* ContentView.swift */; };
 		0A0827842608DA41009FC75C /* RRComponentsKitExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0827832608DA41009FC75C /* RRComponentsKitExampleApp.swift */; };
+		0A08278E2608DAAB009FC75C /* RotatingGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0827882608DAA6009FC75C /* RotatingGradientButton.swift */; };
+		0A0827962608E881009FC75C /* GradientButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0827952608E881009FC75C /* GradientButtonStyle.swift */; };
+		0A08279D2608E8DE009FC75C /* AnimatedGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08279C2608E8DE009FC75C /* AnimatedGradientView.swift */; };
 		0A614AE62608C79A0014F814 /* AppTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AE52608C79A0014F814 /* AppTitle.swift */; };
 		0A614AF32608C8560014F814 /* View+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AF22608C8560014F814 /* View+CustomFont.swift */; };
 		0A614AFD2608C87F0014F814 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AFC2608C87F0014F814 /* Text.swift */; };
@@ -51,6 +54,9 @@
 		0A0827732608DA25009FC75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A08277F2608DA37009FC75C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0A0827832608DA41009FC75C /* RRComponentsKitExampleApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RRComponentsKitExampleApp.swift; sourceTree = "<group>"; };
+		0A0827882608DAA6009FC75C /* RotatingGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingGradientButton.swift; sourceTree = "<group>"; };
+		0A0827952608E881009FC75C /* GradientButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButtonStyle.swift; sourceTree = "<group>"; };
+		0A08279C2608E8DE009FC75C /* AnimatedGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientView.swift; sourceTree = "<group>"; };
 		0A614AE52608C79A0014F814 /* AppTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitle.swift; sourceTree = "<group>"; };
 		0A614AF22608C8560014F814 /* View+CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+CustomFont.swift"; sourceTree = "<group>"; };
 		0A614AFC2608C87F0014F814 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
@@ -105,6 +111,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		0A0827872608DA96009FC75C /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				0A0827882608DAA6009FC75C /* RotatingGradientButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		0A0827932608E867009FC75C /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				0A0827952608E881009FC75C /* GradientButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		0A08279B2608E8CA009FC75C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A08279C2608E8DE009FC75C /* AnimatedGradientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0A614AF02608C8330014F814 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +147,7 @@
 		0A614AF12608C83A0014F814 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0A0827872608DA96009FC75C /* Button */,
 				0A614B082608C8D30014F814 /* Stepper */,
 				0A614B062608C8B90014F814 /* Label */,
 				0A614B072608C8BF0014F814 /* Slider */,
@@ -177,6 +208,8 @@
 		OBJ_8 /* RRComponentsKit */ = {
 			isa = PBXGroup;
 			children = (
+				0A08279B2608E8CA009FC75C /* Views */,
+				0A0827932608E867009FC75C /* Styles */,
 				OBJ_9 /* RRComponentsKit.swift */,
 				0A614AF12608C83A0014F814 /* Components */,
 				0A614AF02608C8330014F814 /* Extensions */,
@@ -301,7 +334,10 @@
 			files = (
 				OBJ_22 /* RRComponentsKit.swift in Sources */,
 				0A614AE62608C79A0014F814 /* AppTitle.swift in Sources */,
+				0A08278E2608DAAB009FC75C /* RotatingGradientButton.swift in Sources */,
+				0A0827962608E881009FC75C /* GradientButtonStyle.swift in Sources */,
 				0A614AFD2608C87F0014F814 /* Text.swift in Sources */,
+				0A08279D2608E8DE009FC75C /* AnimatedGradientView.swift in Sources */,
 				0A614AF32608C8560014F814 /* View+CustomFont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

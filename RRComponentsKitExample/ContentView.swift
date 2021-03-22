@@ -10,13 +10,6 @@ import RRComponentsKit
 
 struct ContentView: View {
     var body: some View {
-        AppTitle("The title goes here")
-            .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        RotatingGradientButton(title: "Evaluate", action: {})
     }
 }
