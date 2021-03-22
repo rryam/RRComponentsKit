@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/// This view has been taken from the article by Caleb Wells. I played around with the code to adjust it for my requirements.
+/// Link to the article - SwiftUI colorful button animation https://dev.to/cr_wells/swiftui-colorful-button-animation-5a4m
+
 public struct AnimatedGradientView: View {
     private let initialPoint = UnitPoint(x: 0, y: 0)
     private let endPoint = UnitPoint(x: 8, y: 0)
