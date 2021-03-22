@@ -10,7 +10,7 @@ import RRComponentsKit
 
 struct ContentView: View {
     var body: some View {
-        AppTitle("Title goes here")
+        AppTitle("The title goes here")
             .padding()
     }
 }
