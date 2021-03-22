@@ -169,9 +169,9 @@
 		OBJ_8 /* RRComponentsKit */ = {
 			isa = PBXGroup;
 			children = (
+				OBJ_9 /* RRComponentsKit.swift */,
 				0A614AF12608C83A0014F814 /* Components */,
 				0A614AF02608C8330014F814 /* Extensions */,
-				OBJ_9 /* RRComponentsKit.swift */,
 			);
 			name = RRComponentsKit;
 			path = Sources/RRComponentsKit;

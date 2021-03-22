@@ -7,10 +7,14 @@
 
 import SwiftUI
 
-struct AppTitle: View {
+public struct AppTitle: View {
     var title: String
 
-    var body: some View {
+    public init(_ title: String) {
+        self.title = title
+    }
+
+    public var body: some View {
     Text(title)
         .tracking(1.0)
         .font(type: .poppins, weight: .bold, style: .title2)
