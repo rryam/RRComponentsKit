@@ -12,19 +12,18 @@ import SwiftUI
 /// Link to the article on which it is based on - https://nerdyak.tech/development/2019/09/30/animating-gradients-swiftui.html
 
 public struct AnimatedGradientView: View {
-    @State private var gradientA: [Color] = [.red, .orange]
-    @State private var gradientB: [Color] = [.red, .orange]
+    @State private var gradientA: [Color] = [Color(.systemPurple), Color(.systemIndigo)]
+    @State private var gradientB: [Color] = [Color(.systemPurple), Color(.systemIndigo)]
 
     @State private var firstPlane: Bool = true
     @State private var colorIndex: Int = 1
 
-    private let gradients: [[Color]] = [[.orange, .yellow],
-                                [.yellow, .green],
-                                [.green, .blue],
-                                [.blue, .purple],
-                                [.red, .orange]]
+    private let gradients: [[Color]] = [[Color(.systemPurple), Color(.systemIndigo)],
+                                [Color(.systemPink), Color(.systemBlue)],
+                                [Color(.systemTeal), Color(.systemGreen)],
+                                [Color(.systemPurple), Color(.systemIndigo)]]
 
-    private let timer = Timer.publish(every: 5.0, on: .main, in: .common).autoconnect()
+    private let timer = Timer.publish(every: 4.0, on: .main, in: .common).autoconnect()
 
     public var body: some View {
         ZStack {
@@ -32,7 +31,7 @@ public struct AnimatedGradientView: View {
             LinearGradient(gradient: Gradient(colors: gradientB), startPoint: .bottomTrailing, endPoint: .topLeading)
                 .opacity(self.firstPlane ? 0 : 1)
         }
-        .animation(.easeInOut(duration: 5.0))
+        .animation(.easeInOut(duration: 4.0))
         .onReceive(timer) { _ in
             if colorIndex == gradients.count {
                 colorIndex = 0
