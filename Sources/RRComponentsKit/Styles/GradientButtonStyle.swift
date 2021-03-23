@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct GradientButtonStyle: ButtonStyle {
+public struct GradientButtonStyle: ButtonStyle {
     let primaryGradient = Gradient(colors: [.secondary, .secondary])
     let secondaryGradient = Gradient(colors: [Color(.lightGray), Color(.darkGray)])
-    func makeBody(configuration: Self.Configuration) -> some View {
+    public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .foregroundColor(.white)
             .font(weight: .semiBold, style: .title3)

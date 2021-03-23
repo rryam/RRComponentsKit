@@ -11,7 +11,7 @@ import SwiftUI
 /// Link to the code - https://github.com/nfarrell36/RotatingGradientView/blob/main/RotatingGradientView.swift
 /// Link to the article on which it is based on - https://nerdyak.tech/development/2019/09/30/animating-gradients-swiftui.html
 
-struct AnimatedGradientView: View {
+public struct AnimatedGradientView: View {
     @State private var gradientA: [Color] = [.red, .orange]
     @State private var gradientB: [Color] = [.red, .orange]
 
@@ -26,7 +26,7 @@ struct AnimatedGradientView: View {
 
     private let timer = Timer.publish(every: 5.0, on: .main, in: .common).autoconnect()
 
-    var body: some View {
+    public var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: gradientA), startPoint: .bottomTrailing, endPoint: .topLeading)
             LinearGradient(gradient: Gradient(colors: gradientB), startPoint: .bottomTrailing, endPoint: .topLeading)

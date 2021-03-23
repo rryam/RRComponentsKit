@@ -8,12 +8,12 @@
 import SwiftUI
 
 extension View {
-    func font(type: FontType =  .poppins, weight: FontWeight = .regular, style: UIFont.TextStyle = .body) -> some View {
+    public func font(type: FontType =  .poppins, weight: FontWeight = .regular, style: UIFont.TextStyle = .body) -> some View {
         self.font(Font.custom(type.name + weight.name, size: UIFont.preferredFont(forTextStyle: style).pointSize))
     }
 }
 
-enum FontType: String {
+public enum FontType: String {
     case montserrat
     case josefinSans
     case poppins
@@ -24,7 +24,7 @@ enum FontType: String {
     }
 }
 
-enum FontWeight: String {
+public enum FontWeight: String {
     case light
     case medium
     case semiBold

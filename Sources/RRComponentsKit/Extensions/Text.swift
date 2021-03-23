@@ -8,18 +8,18 @@
 import SwiftUI
 
 extension Text {
-    func customTitleText(size: CGFloat) -> some View {
+    public func customTitleText(size: CGFloat) -> some View {
         self
             .multilineTextAlignment(.center)
             .font(weight: .black, style: .largeTitle)
     }
 
-    func titleText() -> some View {
+    public func titleText() -> some View {
         self
             .font(weight: .bold, style: .title1)
     }
 
-    func largeTitleText(topPadding: CGFloat = 37) -> some View {
+    public func largeTitleText(topPadding: CGFloat = 37) -> some View {
         self
             .foregroundColor(.primary)
             .font(weight: .bold, style: .largeTitle)
