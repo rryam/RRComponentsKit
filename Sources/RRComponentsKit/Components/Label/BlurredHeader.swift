@@ -17,7 +17,7 @@ public struct BlurredHeader: View {
     public var body: some View {
         Text(title).tracking(1.0)
             .multilineTextAlignment(.center)
-            .font(style: .footnote)
+            .font(weight: .bold, style: .footnote)
             .foregroundColor(.white)
             .padding(8)
             .background(RoundedRectangle(cornerRadius: 6, style: .continuous)
