@@ -25,7 +25,7 @@ public struct BlurredHeader: View {
             .font(weight: weight, style: style)
             .foregroundColor(.white)
             .padding(8)
-            .background(RoundedRectangle(cornerRadius: 6, style: .continuous)
+            .background(RoundedRectangle(cornerRadius: Constants.cornerRadius / 2, style: .continuous)
                             .foregroundColor(Color.black.opacity(0.15)))
             .padding(8)
     }

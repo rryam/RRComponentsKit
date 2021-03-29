@@ -19,6 +19,9 @@
 		0A4320B72611E56100BF1EF9 /* BlurredHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4320B62611E56100BF1EF9 /* BlurredHeader.swift */; };
 		0A4320BB2611E91F00BF1EF9 /* ColoredButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4320BA2611E91F00BF1EF9 /* ColoredButtonStyle.swift */; };
 		0A4320BF2611E93600BF1EF9 /* ColoredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4320BE2611E93600BF1EF9 /* ColoredButton.swift */; };
+		0A4320C32611F43B00BF1EF9 /* StepperButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4320C22611F43B00BF1EF9 /* StepperButtonStyle.swift */; };
+		0A4320C72611F4D500BF1EF9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4320C62611F4D500BF1EF9 /* Color.swift */; };
+		0A4320CB2611F56C00BF1EF9 /* StepperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4320CA2611F56C00BF1EF9 /* StepperButton.swift */; };
 		0A614AE62608C79A0014F814 /* AppTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AE52608C79A0014F814 /* AppTitle.swift */; };
 		0A614AF32608C8560014F814 /* View+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AF22608C8560014F814 /* View+CustomFont.swift */; };
 		0A614AFD2608C87F0014F814 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AFC2608C87F0014F814 /* Text.swift */; };
@@ -63,6 +66,9 @@
 		0A4320B62611E56100BF1EF9 /* BlurredHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredHeader.swift; sourceTree = "<group>"; };
 		0A4320BA2611E91F00BF1EF9 /* ColoredButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredButtonStyle.swift; sourceTree = "<group>"; };
 		0A4320BE2611E93600BF1EF9 /* ColoredButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredButton.swift; sourceTree = "<group>"; };
+		0A4320C22611F43B00BF1EF9 /* StepperButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperButtonStyle.swift; sourceTree = "<group>"; };
+		0A4320C62611F4D500BF1EF9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		0A4320CA2611F56C00BF1EF9 /* StepperButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperButton.swift; sourceTree = "<group>"; };
 		0A614AE52608C79A0014F814 /* AppTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitle.swift; sourceTree = "<group>"; };
 		0A614AF22608C8560014F814 /* View+CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+CustomFont.swift"; sourceTree = "<group>"; };
 		0A614AFC2608C87F0014F814 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 			children = (
 				0A0827882608DAA6009FC75C /* GradientButton.swift */,
 				0A4320BE2611E93600BF1EF9 /* ColoredButton.swift */,
+				0A4320CA2611F56C00BF1EF9 /* StepperButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -131,6 +138,7 @@
 			children = (
 				0A0827952608E881009FC75C /* GradientButtonStyle.swift */,
 				0A4320BA2611E91F00BF1EF9 /* ColoredButtonStyle.swift */,
+				0A4320C22611F43B00BF1EF9 /* StepperButtonStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -148,19 +156,9 @@
 			children = (
 				0A614AF22608C8560014F814 /* View+CustomFont.swift */,
 				0A614AFC2608C87F0014F814 /* Text.swift */,
+				0A4320C62611F4D500BF1EF9 /* Color.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		0A614AF12608C83A0014F814 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				0A0827872608DA96009FC75C /* Button */,
-				0A614B082608C8D30014F814 /* Stepper */,
-				0A614B062608C8B90014F814 /* Label */,
-				0A614B072608C8BF0014F814 /* Slider */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		0A614B062608C8B90014F814 /* Label */ = {
@@ -176,14 +174,16 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Slider;
+			name = Slider;
+			path = Components/Slider;
 			sourceTree = "<group>";
 		};
 		0A614B082608C8D30014F814 /* Stepper */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Stepper;
+			name = Stepper;
+			path = Components/Stepper;
 			sourceTree = "<group>";
 		};
 		OBJ_14 /* Products */ = {
@@ -217,10 +217,13 @@
 		OBJ_8 /* RRComponentsKit */ = {
 			isa = PBXGroup;
 			children = (
+				0A614B072608C8BF0014F814 /* Slider */,
+				0A614B062608C8B90014F814 /* Label */,
+				0A614B082608C8D30014F814 /* Stepper */,
+				0A0827872608DA96009FC75C /* Button */,
 				0A08279B2608E8CA009FC75C /* Views */,
 				0A0827932608E867009FC75C /* Styles */,
 				OBJ_9 /* RRComponentsKit.swift */,
-				0A614AF12608C83A0014F814 /* Components */,
 				0A614AF02608C8330014F814 /* Extensions */,
 			);
 			name = RRComponentsKit;
@@ -342,9 +345,12 @@
 			buildActionMask = 0;
 			files = (
 				0A4320BF2611E93600BF1EF9 /* ColoredButton.swift in Sources */,
+				0A4320CB2611F56C00BF1EF9 /* StepperButton.swift in Sources */,
 				OBJ_22 /* RRComponentsKit.swift in Sources */,
 				0A614AE62608C79A0014F814 /* AppTitle.swift in Sources */,
+				0A4320C32611F43B00BF1EF9 /* StepperButtonStyle.swift in Sources */,
 				0A08278E2608DAAB009FC75C /* GradientButton.swift in Sources */,
+				0A4320C72611F4D500BF1EF9 /* Color.swift in Sources */,
 				0A0827962608E881009FC75C /* GradientButtonStyle.swift in Sources */,
 				0A614AFD2608C87F0014F814 /* Text.swift in Sources */,
 				0A08279D2608E8DE009FC75C /* AnimatedGradientView.swift in Sources */,
