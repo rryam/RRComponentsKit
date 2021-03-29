@@ -9,15 +9,18 @@ import SwiftUI
 
 public struct BlurredHeader: View {
     private var title: String
+    private var weight: FontWeight
 
-    public init(_ title: String) {
+    public init(_ title: String, weight: FontWeight) {
         self.title = title
+        self.weight = weight
     }
 
     public var body: some View {
-        Text(title).tracking(1.0)
+        Text(title)
+            .tracking(1.0)
             .multilineTextAlignment(.center)
-            .font(weight: .bold, style: .footnote)
+            .font(weight: weight, style: .footnote)
             .foregroundColor(.white)
             .padding(8)
             .background(RoundedRectangle(cornerRadius: 6, style: .continuous)
