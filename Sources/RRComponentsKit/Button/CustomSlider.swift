@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+/// Note - Taken from this article [https://betterprogramming.pub/reusable-components-in-swiftui-custom-sliders-8c115914b856] by Aubree Quiroz and modified according to needs.
 struct CustomSlider<Component: View>: View {
 
     @Binding var value: Double
@@ -14,9 +16,7 @@ struct CustomSlider<Component: View>: View {
     var knobWidth: CGFloat?
     let viewBuilder: (CustomSliderComponents) -> Component
 
-    init(value: Binding<Double>, range: (Double, Double), knobWidth: CGFloat? = nil,
-         _ viewBuilder: @escaping (CustomSliderComponents) -> Component
-    ) {
+    init(value: Binding<Double>, range: (Double, Double), knobWidth: CGFloat? = nil, _ viewBuilder: @escaping (CustomSliderComponents) -> Component) {
         _value = value
         self.range = range
         self.viewBuilder = viewBuilder
