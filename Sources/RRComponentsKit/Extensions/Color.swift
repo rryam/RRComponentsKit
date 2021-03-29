@@ -15,4 +15,11 @@ extension Color {
         return Color(UIColor.systemGray5)
         #endif
     }
+
+    /// If the app is in dark mode, returns black, otherwise white. Opposite of .primary Color.
+    static var traitsBackground: Color {
+        Color(UIColor { (traits) -> UIColor in
+            return traits.userInterfaceStyle == .dark ? UIColor.black : UIColor.white
+        })
+    }
 }
