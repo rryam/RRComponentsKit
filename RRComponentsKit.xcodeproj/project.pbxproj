@@ -28,6 +28,7 @@
 		0A614AE62608C79A0014F814 /* AppTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AE52608C79A0014F814 /* AppTitle.swift */; };
 		0A614AF32608C8560014F814 /* View+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AF22608C8560014F814 /* View+CustomFont.swift */; };
 		0A614AFD2608C87F0014F814 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AFC2608C87F0014F814 /* Text.swift */; };
+		0AC1BB68261229350017CD43 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1BB67261229350017CD43 /* NavigationButton.swift */; };
 		OBJ_22 /* RRComponentsKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* RRComponentsKit.swift */; };
 		OBJ_29 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 /* End PBXBuildFile section */
@@ -72,12 +73,13 @@
 		0A4320C22611F43B00BF1EF9 /* StepperButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperButtonStyle.swift; sourceTree = "<group>"; };
 		0A4320C62611F4D500BF1EF9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0A4320CA2611F56C00BF1EF9 /* StepperButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperButton.swift; sourceTree = "<group>"; };
-		0A4320CE2611F7D300BF1EF9 /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomStepper.swift; path = Sources/RRComponentsKit/Button/CustomStepper.swift; sourceTree = SOURCE_ROOT; };
-		0A4320D22611F80400BF1EF9 /* CustomSliders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSliders.swift; path = Sources/RRComponentsKit/Button/CustomSliders.swift; sourceTree = SOURCE_ROOT; };
-		0A4320D62611F81C00BF1EF9 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSlider.swift; path = Sources/RRComponentsKit/Button/CustomSlider.swift; sourceTree = SOURCE_ROOT; };
+		0A4320CE2611F7D300BF1EF9 /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomStepper.swift; path = Sources/RRComponentsKit/Stepper/CustomStepper.swift; sourceTree = SOURCE_ROOT; };
+		0A4320D22611F80400BF1EF9 /* CustomSliders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSliders.swift; path = Sources/RRComponentsKit/Slider/CustomSliders.swift; sourceTree = SOURCE_ROOT; };
+		0A4320D62611F81C00BF1EF9 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSlider.swift; path = Sources/RRComponentsKit/Slider/CustomSlider.swift; sourceTree = SOURCE_ROOT; };
 		0A614AE52608C79A0014F814 /* AppTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitle.swift; sourceTree = "<group>"; };
 		0A614AF22608C8560014F814 /* View+CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+CustomFont.swift"; sourceTree = "<group>"; };
 		0A614AFC2608C87F0014F814 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		0AC1BB67261229350017CD43 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* RRComponentsKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RRComponentsKit.swift; sourceTree = "<group>"; };
 		"RRComponentsKit::RRComponentsKit::Product" /* RRComponentsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RRComponentsKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 				0A0827882608DAA6009FC75C /* GradientButton.swift */,
 				0A4320BE2611E93600BF1EF9 /* ColoredButton.swift */,
 				0A4320CA2611F56C00BF1EF9 /* StepperButton.swift */,
+				0AC1BB67261229350017CD43 /* NavigationButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -157,6 +160,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		0A4320DC2611FF8800BF1EF9 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				0A4320D22611F80400BF1EF9 /* CustomSliders.swift */,
+				0A4320D62611F81C00BF1EF9 /* CustomSlider.swift */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
+		0A4320DD2611FF9100BF1EF9 /* Stepper */ = {
+			isa = PBXGroup;
+			children = (
+				0A4320CE2611F7D300BF1EF9 /* CustomStepper.swift */,
+			);
+			path = Stepper;
+			sourceTree = "<group>";
+		};
 		0A614AF02608C8330014F814 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,25 +194,6 @@
 				0A4320B62611E56100BF1EF9 /* BlurredHeader.swift */,
 			);
 			path = Label;
-			sourceTree = "<group>";
-		};
-		0A614B072608C8BF0014F814 /* Slider */ = {
-			isa = PBXGroup;
-			children = (
-				0A4320D22611F80400BF1EF9 /* CustomSliders.swift */,
-				0A4320D62611F81C00BF1EF9 /* CustomSlider.swift */,
-			);
-			name = Slider;
-			path = Components/Slider;
-			sourceTree = "<group>";
-		};
-		0A614B082608C8D30014F814 /* Stepper */ = {
-			isa = PBXGroup;
-			children = (
-				0A4320CE2611F7D300BF1EF9 /* CustomStepper.swift */,
-			);
-			name = Stepper;
-			path = Components/Stepper;
 			sourceTree = "<group>";
 		};
 		OBJ_14 /* Products */ = {
@@ -226,13 +227,13 @@
 		OBJ_8 /* RRComponentsKit */ = {
 			isa = PBXGroup;
 			children = (
-				0A614B072608C8BF0014F814 /* Slider */,
+				OBJ_9 /* RRComponentsKit.swift */,
+				0A4320DD2611FF9100BF1EF9 /* Stepper */,
+				0A4320DC2611FF8800BF1EF9 /* Slider */,
 				0A614B062608C8B90014F814 /* Label */,
-				0A614B082608C8D30014F814 /* Stepper */,
 				0A0827872608DA96009FC75C /* Button */,
 				0A08279B2608E8CA009FC75C /* Views */,
 				0A0827932608E867009FC75C /* Styles */,
-				OBJ_9 /* RRComponentsKit.swift */,
 				0A614AF02608C8330014F814 /* Extensions */,
 			);
 			name = RRComponentsKit;
@@ -360,6 +361,7 @@
 				0A4320C32611F43B00BF1EF9 /* StepperButtonStyle.swift in Sources */,
 				0A08278E2608DAAB009FC75C /* GradientButton.swift in Sources */,
 				0A4320C72611F4D500BF1EF9 /* Color.swift in Sources */,
+				0AC1BB68261229350017CD43 /* NavigationButton.swift in Sources */,
 				0A4320D32611F80400BF1EF9 /* CustomSliders.swift in Sources */,
 				0A0827962608E881009FC75C /* GradientButtonStyle.swift in Sources */,
 				0A614AFD2608C87F0014F814 /* Text.swift in Sources */,
