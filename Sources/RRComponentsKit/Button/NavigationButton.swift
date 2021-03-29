@@ -7,12 +7,18 @@
 
 import SwiftUI
 
-struct NavigationButton: View {
-    var imageName: String
-    var label: String
-    var action: () -> ()
+public struct NavigationButton: View {
+    private var imageName: String
+    private var label: String
+    private var action: () -> ()
 
-    var body: some View {
+    public init(imageName: String, label: String, action: @escaping () -> Void) {
+        self.imageName = imageName
+        self.label = label
+        self.action = action
+    }
+
+    public var body: some View {
         Button(action: action) {
             Image(systemName: imageName)
                 .font(.system(size: 25))
