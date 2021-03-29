@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension Color {
+public extension Color {
     static var gradientGray: Color {
         #if os(macOS)
         return Color(NSColor.black)
