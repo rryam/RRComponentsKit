@@ -16,6 +16,7 @@
 		0A08278E2608DAAB009FC75C /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0827882608DAA6009FC75C /* GradientButton.swift */; };
 		0A0827962608E881009FC75C /* GradientButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0827952608E881009FC75C /* GradientButtonStyle.swift */; };
 		0A08279D2608E8DE009FC75C /* AnimatedGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A08279C2608E8DE009FC75C /* AnimatedGradientView.swift */; };
+		0A4320B72611E56100BF1EF9 /* BlurredHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4320B62611E56100BF1EF9 /* BlurredHeader.swift */; };
 		0A614AE62608C79A0014F814 /* AppTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AE52608C79A0014F814 /* AppTitle.swift */; };
 		0A614AF32608C8560014F814 /* View+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AF22608C8560014F814 /* View+CustomFont.swift */; };
 		0A614AFD2608C87F0014F814 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AFC2608C87F0014F814 /* Text.swift */; };
@@ -57,6 +58,7 @@
 		0A0827882608DAA6009FC75C /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		0A0827952608E881009FC75C /* GradientButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButtonStyle.swift; sourceTree = "<group>"; };
 		0A08279C2608E8DE009FC75C /* AnimatedGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientView.swift; sourceTree = "<group>"; };
+		0A4320B62611E56100BF1EF9 /* BlurredHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredHeader.swift; sourceTree = "<group>"; };
 		0A614AE52608C79A0014F814 /* AppTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitle.swift; sourceTree = "<group>"; };
 		0A614AF22608C8560014F814 /* View+CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+CustomFont.swift"; sourceTree = "<group>"; };
 		0A614AFC2608C87F0014F814 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				0A614AE52608C79A0014F814 /* AppTitle.swift */,
+				0A4320B62611E56100BF1EF9 /* BlurredHeader.swift */,
 			);
 			path = Label;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				0A614AFD2608C87F0014F814 /* Text.swift in Sources */,
 				0A08279D2608E8DE009FC75C /* AnimatedGradientView.swift in Sources */,
 				0A614AF32608C8560014F814 /* View+CustomFont.swift in Sources */,
+				0A4320B72611E56100BF1EF9 /* BlurredHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

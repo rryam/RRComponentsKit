@@ -8,7 +8,7 @@
 import SwiftUI
 
 public struct AppTitle: View {
-    var title: String
+    private var title: String
 
     public init(_ title: String) {
         self.title = title
