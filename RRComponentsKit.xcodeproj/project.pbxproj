@@ -28,6 +28,7 @@
 		0A614AE62608C79A0014F814 /* AppTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AE52608C79A0014F814 /* AppTitle.swift */; };
 		0A614AF32608C8560014F814 /* View+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AF22608C8560014F814 /* View+CustomFont.swift */; };
 		0A614AFD2608C87F0014F814 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AFC2608C87F0014F814 /* Text.swift */; };
+		0A82E31A261BFCFB0024F96D /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82E319261BFCFB0024F96D /* RingView.swift */; };
 		0AC1BB68261229350017CD43 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1BB67261229350017CD43 /* NavigationButton.swift */; };
 		OBJ_22 /* RRComponentsKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* RRComponentsKit.swift */; };
 		OBJ_29 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -79,6 +80,7 @@
 		0A614AE52608C79A0014F814 /* AppTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitle.swift; sourceTree = "<group>"; };
 		0A614AF22608C8560014F814 /* View+CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+CustomFont.swift"; sourceTree = "<group>"; };
 		0A614AFC2608C87F0014F814 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		0A82E319261BFCFB0024F96D /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		0AC1BB67261229350017CD43 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* RRComponentsKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RRComponentsKit.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				0A08279C2608E8DE009FC75C /* AnimatedGradientView.swift */,
+				0A82E319261BFCFB0024F96D /* RingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				0A0827962608E881009FC75C /* GradientButtonStyle.swift in Sources */,
 				0A614AFD2608C87F0014F814 /* Text.swift in Sources */,
 				0A08279D2608E8DE009FC75C /* AnimatedGradientView.swift in Sources */,
+				0A82E31A261BFCFB0024F96D /* RingView.swift in Sources */,
 				0A4320D72611F81C00BF1EF9 /* CustomSlider.swift in Sources */,
 				0A4320CF2611F7D400BF1EF9 /* CustomStepper.swift in Sources */,
 				0A4320BB2611E91F00BF1EF9 /* ColoredButtonStyle.swift in Sources */,

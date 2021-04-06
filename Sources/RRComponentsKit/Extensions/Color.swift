@@ -8,6 +8,31 @@
 import SwiftUI
 
 public extension Color {
+    init(red: Int, green: Int, blue: Int) {
+        let red = Double(red) / 255
+        let green = Double(green) / 255
+        let blue = Double(blue) / 255
+        
+        self.init(red: red, green: green, blue: blue, opacity: 1.0)
+    }
+    
+    init(hex: Int) {
+        self.init(red: (hex >> 16) & 0xFF, green: (hex >> 8) & 0xFF, blue: hex & 0xFF)
+    }
+}
+
+public extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        let red = CGFloat(red) / 255
+        let green = CGFloat(green) / 255
+        let blue = CGFloat(blue) / 255
+        
+        self.init(red: red, green: green, blue: blue, alpha: 1.0)
+    }
+}
+
+
+public extension Color {
     static var gradientGray: Color {
         #if os(macOS)
         return Color(NSColor.black)
@@ -15,11 +40,20 @@ public extension Color {
         return Color(UIColor.systemGray5)
         #endif
     }
-
+    
     /// If the app is in dark mode, returns black, otherwise white. Opposite of .primary Color.
     static var traitsBackground: Color {
         Color(UIColor { (traits) -> UIColor in
             return traits.userInterfaceStyle == .dark ? UIColor.black : UIColor.white
+        })
+    }
+    
+    static var ringBackground: Color {
+        let darkRingBackgroundColor = UIColor(red: 27, green: 27, blue: 32)
+        let lightRingBackgroundColor = UIColor(red: 200, green: 200, blue: 20)
+        
+        return Color(UIColor { (traits) -> UIColor in
+            return traits.userInterfaceStyle == .dark ? darkRingBackgroundColor : lightRingBackgroundColor
         })
     }
 }
