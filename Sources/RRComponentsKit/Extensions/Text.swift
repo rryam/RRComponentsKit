@@ -19,10 +19,10 @@ extension Text {
             .font(weight: .bold, style: .title1)
     }
 
-    public func largeTitleText(topPadding: CGFloat = 37) -> some View {
+    public func largeTitleText(type: FontType, topPadding: CGFloat = 37) -> some View {
         self
             .foregroundColor(.primary)
-            .font(weight: .bold, style: .largeTitle)
+            .font(type: type, weight: .bold, style: .largeTitle)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.top, topPadding)
     }
