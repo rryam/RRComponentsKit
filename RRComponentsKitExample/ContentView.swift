@@ -13,5 +13,7 @@ struct ContentView: View {
         GradientButton(title: "Evaluate", action: {})
 
         CustomStepper(value: .constant(1.0), color: .primary, name: "color")
+        
+        NavTitleView("Title Goes here")
     }
 }
