@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A008EB926986C95009A1426 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A008EB826986C95009A1426 /* TabBarView.swift */; };
 		0A08276F2608DA25009FC75C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A08276E2608DA25009FC75C /* Assets.xcassets */; };
 		0A0827722608DA25009FC75C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A0827712608DA25009FC75C /* Preview Assets.xcassets */; };
 		0A08277A2608DA2C009FC75C /* RRComponentsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "RRComponentsKit::RRComponentsKit::Product" /* RRComponentsKit.framework */; };
@@ -60,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A008EB826986C95009A1426 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		0A0827682608DA23009FC75C /* RRComponentsKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRComponentsKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A08276E2608DA25009FC75C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A0827712608DA25009FC75C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				0A08279C2608E8DE009FC75C /* AnimatedGradientView.swift */,
 				0A82E319261BFCFB0024F96D /* RingView.swift */,
 				0A948E772697AF9B006C8C00 /* NavTitleView.swift */,
+				0A008EB826986C95009A1426 /* TabBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				0A4320CF2611F7D400BF1EF9 /* CustomStepper.swift in Sources */,
 				0A4320BB2611E91F00BF1EF9 /* ColoredButtonStyle.swift in Sources */,
 				0A614AF32608C8560014F814 /* View+CustomFont.swift in Sources */,
+				0A008EB926986C95009A1426 /* TabBarView.swift in Sources */,
 				0A4320B72611E56100BF1EF9 /* BlurredHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
