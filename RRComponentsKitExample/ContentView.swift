@@ -28,6 +28,15 @@ enum TabItemType: Int, CaseIterable, Hashable, TabItem {
     var name: String {
         String(describing: self).uppercased()
     }
+    
+    @ViewBuilder
+    var view: some View {
+        switch self {
+            case .slider: CustomSliders(value: .constant(1.0))
+            case .stepper: CustomStepper(value: .constant(1.0), color: .primary, name: "color")
+            case .button:  GradientButton(title: "Evaluate", action: {})
+        }
+    }
 }
 
 struct ContentView: View {
@@ -35,20 +44,14 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            NavTitleView("Title Goes here")
-
+            NavTitleView("Title Goes here").padding(.horizontal)
+            
             TabView(selection: $tabViewModel.currentTab) {
-                CustomSliders(value: .constant(1.0))
-                    .padding()
-                    .tag(TabItemType.slider)
-                
-                CustomStepper(value: .constant(1.0), color: .primary, name: "color")
-                    .padding()
-                    .tag(TabItemType.stepper)
-                
-                GradientButton(title: "Evaluate", action: {})
-                    .padding()
-                    .tag(TabItemType.button)
+                ForEach(TabItemType.allCases, id: \.id) { item in
+                    item.view
+                        .padding()
+                        .tag(item.self)
+                }
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             
