@@ -7,15 +7,21 @@
 
 import SwiftUI
 
-struct CustomSliders: View {
+public struct CustomSliders: View {
+    public init(value: Binding<Double>, color: Color = .gray) {
+        self._value = value
+        self.color = color
+    }
+    
     @Binding var value: Double
     var color: Color = .gray
 
     var colors: [Color] {
         [Color.gradientGray.opacity(0.8), Color.gradientGray]
     }
+    
 
-    var body: some View {
+    public var body: some View {
         CustomSlider(value: $value, range: (0, 1)) { modifiers in
             ZStack {
                 LinearGradient(gradient: .init(colors: colors), startPoint: .topLeading, endPoint: .bottomTrailing)
