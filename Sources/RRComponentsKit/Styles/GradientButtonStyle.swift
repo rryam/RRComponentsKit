@@ -13,7 +13,6 @@ public struct GradientButtonStyle: ButtonStyle {
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .foregroundColor(.white)
-            .font(weight: .semiBold, style: .title3)
             .padding(.vertical)
             .frame(maxWidth: .infinity, alignment: .center)
             .background(AnimatedGradientView().cornerRadius(Constants.cornerRadius))
