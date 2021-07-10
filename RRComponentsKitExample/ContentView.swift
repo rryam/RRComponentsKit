@@ -12,12 +12,14 @@ enum TabItemType: Int, CaseIterable, Hashable, TabItem {
     case slider = 1
     case stepper
     case button
+    case box
     
     var image: String {
         switch self {
             case .slider: return "music.note.list"
             case .stepper: return "magnifyingglass"
             case .button: return "captions.bubble"
+            case .box: return "archivebox"
         }
     }
     
@@ -29,18 +31,18 @@ enum TabItemType: Int, CaseIterable, Hashable, TabItem {
         String(describing: self).uppercased()
     }
     
-    @ViewBuilder
-    var view: some View {
+    @ViewBuilder var view: some View {
         switch self {
             case .slider: CustomSliders(value: .constant(1.0))
             case .stepper: CustomStepper(value: .constant(1.0), color: .primary, name: "color")
             case .button:  GradientButton(title: "Evaluate", action: {})
+            case .box: BoxView("Target", Color.pink) { }
         }
     }
 }
 
 struct ContentView: View {
-    @StateObject private var tabViewModel = TabBarViewModel(TabItemType.allCases, current: TabItemType.slider)
+    @StateObject private var tabViewModel = TabBarViewModel(TabItemType.allCases, current: TabItemType.box)
     
     var body: some View {
         VStack {

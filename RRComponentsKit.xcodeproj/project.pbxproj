@@ -26,6 +26,7 @@
 		0A4320CF2611F7D400BF1EF9 /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4320CE2611F7D300BF1EF9 /* CustomStepper.swift */; };
 		0A4320D32611F80400BF1EF9 /* CustomSliders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4320D22611F80400BF1EF9 /* CustomSliders.swift */; };
 		0A4320D72611F81C00BF1EF9 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4320D62611F81C00BF1EF9 /* CustomSlider.swift */; };
+		0A544766269A1304005A40C1 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A544765269A1304005A40C1 /* BoxView.swift */; };
 		0A614AE62608C79A0014F814 /* AppTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AE52608C79A0014F814 /* AppTitle.swift */; };
 		0A614AF32608C8560014F814 /* View+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AF22608C8560014F814 /* View+CustomFont.swift */; };
 		0A614AFD2608C87F0014F814 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AFC2608C87F0014F814 /* Text.swift */; };
@@ -80,6 +81,7 @@
 		0A4320CE2611F7D300BF1EF9 /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomStepper.swift; path = Sources/RRComponentsKit/Stepper/CustomStepper.swift; sourceTree = SOURCE_ROOT; };
 		0A4320D22611F80400BF1EF9 /* CustomSliders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSliders.swift; path = Sources/RRComponentsKit/Slider/CustomSliders.swift; sourceTree = SOURCE_ROOT; };
 		0A4320D62611F81C00BF1EF9 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSlider.swift; path = Sources/RRComponentsKit/Slider/CustomSlider.swift; sourceTree = SOURCE_ROOT; };
+		0A544765269A1304005A40C1 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
 		0A614AE52608C79A0014F814 /* AppTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitle.swift; sourceTree = "<group>"; };
 		0A614AF22608C8560014F814 /* View+CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+CustomFont.swift"; sourceTree = "<group>"; };
 		0A614AFC2608C87F0014F814 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				0A82E319261BFCFB0024F96D /* RingView.swift */,
 				0A948E772697AF9B006C8C00 /* NavTitleView.swift */,
 				0A008EB826986C95009A1426 /* TabBarView.swift */,
+				0A544765269A1304005A40C1 /* BoxView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				0A614AFD2608C87F0014F814 /* Text.swift in Sources */,
 				0A08279D2608E8DE009FC75C /* AnimatedGradientView.swift in Sources */,
 				0A82E31A261BFCFB0024F96D /* RingView.swift in Sources */,
+				0A544766269A1304005A40C1 /* BoxView.swift in Sources */,
 				0A4320D72611F81C00BF1EF9 /* CustomSlider.swift in Sources */,
 				0A4320CF2611F7D400BF1EF9 /* CustomStepper.swift in Sources */,
 				0A4320BB2611E91F00BF1EF9 /* ColoredButtonStyle.swift in Sources */,
