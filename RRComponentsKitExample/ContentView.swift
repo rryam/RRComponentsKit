@@ -10,14 +10,12 @@ import RRComponentsKit
 
 enum TabItemType: Int, CaseIterable, Hashable, TabItem {
     case slider = 1
-    case stepper
     case button
     case box
     
     var image: String {
         switch self {
             case .slider: return "music.note.list"
-            case .stepper: return "magnifyingglass"
             case .button: return "captions.bubble"
             case .box: return "archivebox"
         }
@@ -33,9 +31,8 @@ enum TabItemType: Int, CaseIterable, Hashable, TabItem {
     
     @ViewBuilder var view: some View {
         switch self {
-            case .slider: WideSlider(.constant(1.0))
-            case .stepper: WideStepper(.constant(1.0), onIncrement: {}, onDecrement: {}, content: { Text("HELLO") })
-            case .button:  GradientButton(title: "Evaluate", action: {})
+            case .slider: ControlView(.constant(1.0))
+            case .button: GradientButton(title: "Evaluate", action: {})
             case .box: BoxView(.target, Color.pink) { }
         }
     }
