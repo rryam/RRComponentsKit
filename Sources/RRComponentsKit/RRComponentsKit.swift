@@ -5,5 +5,5 @@ struct RRComponentsKit {
 }
 
 struct Constants {
-    static let cornerRadius: CGFloat = 12
+    static let cornerRadius: CGFloat = 16
 }

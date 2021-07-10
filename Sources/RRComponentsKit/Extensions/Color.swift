@@ -41,6 +41,14 @@ public extension Color {
         #endif
     }
     
+    static var secondaryBackground: Color {
+        #if os(macOS)
+        return Color(NSColor(red: 28/255, green: 28/255, blue: 30/255, alpha: 1.0))
+        #else
+        return Color(UIColor.systemGray6)
+        #endif
+    }
+    
     /// If the app is in dark mode, returns black, otherwise white. Opposite of .primary Color.
     static var traitsBackground: Color {
         Color(UIColor { (traits) -> UIColor in

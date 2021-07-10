@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 /// Note - Taken from this article [https://betterprogramming.pub/reusable-components-in-swiftui-custom-sliders-8c115914b856] by Aubree Quiroz and modified according to needs.
 struct CustomSlider<Component: View>: View {
 
@@ -16,7 +15,9 @@ struct CustomSlider<Component: View>: View {
     var knobWidth: CGFloat?
     let viewBuilder: (CustomSliderComponents) -> Component
 
-    init(value: Binding<Double>, range: (Double, Double), knobWidth: CGFloat? = nil, _ viewBuilder: @escaping (CustomSliderComponents) -> Component) {
+    init(value: Binding<Double>, range: (Double, Double), knobWidth: CGFloat? = nil,
+         _ viewBuilder: @escaping (CustomSliderComponents) -> Component
+    ) {
         _value = value
         self.range = range
         self.viewBuilder = viewBuilder
@@ -34,7 +35,7 @@ struct CustomSlider<Component: View>: View {
         let frame = geometry.frame(in: .global)
         let drag = DragGesture(minimumDistance: 0).onChanged({ drag in
             self.onDragChange(drag, frame)
-        }
+            }
         )
         let offsetX = self.getOffsetX(frame: frame)
         let knobSize = CGSize(width: knobWidth ?? frame.height, height: frame.height)
@@ -70,7 +71,8 @@ struct CustomSlider<Component: View>: View {
 
 struct CustomSlider_Previews: PreviewProvider {
     static var previews: some View {
-        CustomSliders(value: .constant(0.8), color: .green).colorScheme(.dark)
+        WideSlider(.constant(0.8))
+            .accentColor(.green)
     }
 }
 

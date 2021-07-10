@@ -33,8 +33,8 @@ enum TabItemType: Int, CaseIterable, Hashable, TabItem {
     
     @ViewBuilder var view: some View {
         switch self {
-            case .slider: CustomSliders(value: .constant(1.0))
-            case .stepper: CustomStepper(value: .constant(1.0), color: .primary, name: "color")
+            case .slider: WideSlider(.constant(1.0))
+            case .stepper: WideStepper(.constant(1.0), onIncrement: {}, onDecrement: {}, content: { Text("HELLO") })
             case .button:  GradientButton(title: "Evaluate", action: {})
             case .box: BoxView(.target, Color.pink) { }
         }

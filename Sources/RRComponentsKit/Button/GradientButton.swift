@@ -12,7 +12,7 @@ public struct GradientButton: View {
     private var font: UIFont.TextStyle = .headline
     private var action: () -> ()
     
-    public init(title: String, font: UIFont.TextStyle = .headline, action: @escaping () -> Void) {
+    public init(title: String, font: UIFont.TextStyle = .headline, action: @escaping () -> ()) {
         self.font = font
         self.title = title
         self.action = action
