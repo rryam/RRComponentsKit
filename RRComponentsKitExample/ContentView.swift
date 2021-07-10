@@ -36,7 +36,7 @@ enum TabItemType: Int, CaseIterable, Hashable, TabItem {
             case .slider: CustomSliders(value: .constant(1.0))
             case .stepper: CustomStepper(value: .constant(1.0), color: .primary, name: "color")
             case .button:  GradientButton(title: "Evaluate", action: {})
-            case .box: BoxView("Target", Color.pink) { }
+            case .box: BoxView(.target, Color.pink) { }
         }
     }
 }
