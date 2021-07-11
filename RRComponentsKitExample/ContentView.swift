@@ -66,14 +66,17 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct ControlsView: View {
-    @State private var value: Double = .random(in: 0...1)
+    @State private var red: Double = .random(in: 0...1)
+    @State private var green: Double = .random(in: 0...1)
+    @State private var blue: Double = .random(in: 0...1)
+    
     var body: some View {
         VStack {
-            ControlView($value).accentColor(.red)
+            ControlView($red).accentColor(.red)
             
-            ControlView($value).accentColor(.green)
+            ControlView($green).accentColor(.green)
             
-            ControlView($value)
+            ControlView($blue)
         }
     }
 }
