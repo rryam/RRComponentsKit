@@ -21,6 +21,7 @@ struct WideStepperButton: View {
         Button(action: action) {
             Image(systemName: systemName.rawValue)
                 .foregroundColor(condition ? .accentColor : .secondaryBackground)
+                .padding(2)
         }
        .buttonStyle(.stepper)
     }

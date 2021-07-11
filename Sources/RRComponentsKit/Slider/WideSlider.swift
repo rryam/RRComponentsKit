@@ -23,6 +23,8 @@ struct WideSlider: View {
             ZStack(alignment: .center) {
                 LinearGradient(colors: [.traitsBackground], startPoint: .leading, endPoint: .trailing)
                     .modifier(modifiers.barRight)
+                    .overlay(RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                                .stroke(Color.stroke))
                 
                 LinearGradient(colors: colors, startPoint: .leading, endPoint: .trailing)
                     .modifier(modifiers.barLeft)

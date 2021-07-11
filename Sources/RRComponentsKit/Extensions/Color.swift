@@ -64,4 +64,6 @@ public extension Color {
             return traits.userInterfaceStyle == .dark ? darkRingBackgroundColor : lightRingBackgroundColor
         })
     }
+    
+    static let stroke = Color.primary.opacity(0.1)
 }

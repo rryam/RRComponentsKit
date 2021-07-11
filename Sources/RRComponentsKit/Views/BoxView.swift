@@ -28,7 +28,7 @@ public struct BoxView<Content: View, Fill: ShapeStyle>: View {
             RoundedRectangle(cornerRadius: Constants.cornerRadius)
                 .fill(fill)
                 .overlay(RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                            .stroke(Color.primary.opacity(0.1)))
+                            .stroke(Color.stroke))
             
             VStack {
                 Text(header.rawValue.uppercased())
