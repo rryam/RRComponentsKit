@@ -34,6 +34,6 @@ struct WideSlider: View {
             }
             .cornerRadius(Constants.cornerRadius)
         }
-        .frame(height: 30)
+        .frame(height: 25)
     }
 }

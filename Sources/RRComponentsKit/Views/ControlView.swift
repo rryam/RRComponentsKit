@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MovingNumbersView
 
 public struct ControlView: View {
     @Binding var value: Double
@@ -15,10 +16,19 @@ public struct ControlView: View {
         self.step = step
         self._value = value
     }
-
+    
     public var body: some View {
-        WideStepper($value, onIncrement: onIncrement, onDecrement: onDecrement) {
-            WideSlider($value)
+        VStack(spacing: 4) {
+            MovingNumbersView(number: value * (1 / step), numberOfDecimalPlaces: 1) { number in
+                Text(number)
+                    .kerning(1.0)
+                    .foregroundColor(.accentColor)
+                    .font(type: .montserrat, weight: .light, style: .callout)
+            }
+            
+            WideStepper($value, onIncrement: onIncrement, onDecrement: onDecrement) {
+                WideSlider($value)
+            }
         }
     }
     
