@@ -14,6 +14,7 @@ let package = Package(
             targets: ["RRComponentsKit"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/aunnnn/MovingNumbersView.git", from: "0.1.0"),
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
