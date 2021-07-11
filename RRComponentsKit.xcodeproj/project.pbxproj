@@ -35,7 +35,7 @@
 		0AB27D2F269A1AAE00817A15 /* WideStepperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB27D2E269A1AAE00817A15 /* WideStepperButton.swift */; };
 		0AB27D31269A20D600817A15 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB27D30269A20D600817A15 /* ControlView.swift */; };
 		0AC1BB68261229350017CD43 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1BB67261229350017CD43 /* NavigationButton.swift */; };
-		0AC74E86269B7F37004C0176 /* MovingNumbersView in Frameworks */ = {isa = PBXBuildFile; productRef = 0AC74E85269B7F37004C0176 /* MovingNumbersView */; };
+		0AC74E86269B7F37004C0176 /* MovingNumbersView in Frameworks */ = {isa = PBXBuildFile; productRef = 0AC74E85269B7F37004C0176 /* MovingNumbersView */; settings = {ATTRIBUTES = (Required, ); }; };
 		OBJ_22 /* RRComponentsKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* RRComponentsKit.swift */; };
 		OBJ_29 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 /* End PBXBuildFile section */
