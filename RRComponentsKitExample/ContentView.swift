@@ -28,18 +28,11 @@ enum TabItemType: Int, CaseIterable, Hashable, TabItem {
     var name: String {
         String(describing: self).uppercased()
     }
-    
-    @ViewBuilder var view: some View {
-        switch self {
-            case .slider: ControlView(.constant(1.0))
-            case .button: GradientButton(title: "Evaluate", action: {})
-            case .box: BoxView(.target, Color.pink) { }
-        }
-    }
 }
 
 struct ContentView: View {
     @StateObject private var tabViewModel = TabBarViewModel(TabItemType.allCases, current: TabItemType.box)
+    @State private var value: Double = .random(in: 0...1)
     
     var body: some View {
         VStack {
@@ -47,7 +40,7 @@ struct ContentView: View {
             
             TabView(selection: $tabViewModel.currentTab) {
                 ForEach(TabItemType.allCases, id: \.id) { item in
-                    item.view
+                    tabItemView(with: item)
                         .padding()
                         .tag(item.self)
                 }
@@ -55,6 +48,14 @@ struct ContentView: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
             
             TabBarView(viewModel: tabViewModel)
+        }
+    }
+    
+    @ViewBuilder func tabItemView(with item: TabItemType) -> some View {
+        switch item {
+            case .slider: ControlView($value)
+            case .button: GradientButton(title: "Evaluate", action: {})
+            case .box: BoxView(.target, Color.pink) { }
         }
     }
 }

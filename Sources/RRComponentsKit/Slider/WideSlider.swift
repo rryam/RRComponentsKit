@@ -21,6 +21,9 @@ struct WideSlider: View {
     var body: some View {
         CustomSlider(value: $value, range: (0, 1)) { modifiers in
             ZStack(alignment: .center) {
+                LinearGradient(colors: [.traitsBackground], startPoint: .leading, endPoint: .trailing)
+                    .modifier(modifiers.barRight)
+                
                 LinearGradient(colors: colors, startPoint: .leading, endPoint: .trailing)
                     .modifier(modifiers.barLeft)
                 
