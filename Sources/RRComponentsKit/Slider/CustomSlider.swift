@@ -78,7 +78,6 @@ struct CustomSlider_Previews: PreviewProvider {
 
 extension Double {
     func convert(fromRange: (Double, Double), toRange: (Double, Double)) -> Double {
-        // Example: if self = 1, fromRange = (0,2), toRange = (10,12) -> solution = 11
         var value = self
         value -= fromRange.0
         value /= Double(fromRange.1 - fromRange.0)

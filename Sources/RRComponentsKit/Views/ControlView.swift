@@ -10,16 +10,16 @@ import MovingNumbersView
 
 public struct ControlView: View {
     @Binding var value: Double
-    var step: Double
+    let step: Double
     
-    public init(_ value: Binding<Double>, step: Double = 1.0/255) {
+    public init(_ value: Binding<Double>, step: Double = 255) {
         self.step = step
         self._value = value
     }
     
     public var body: some View {
         VStack(spacing: 4) {
-            MovingNumbersView(number: value * (1 / step), numberOfDecimalPlaces: 1) { number in
+            MovingNumbersView(number: value * step, numberOfDecimalPlaces: 0) { number in
                 Text(number)
                     .kerning(1.0)
                     .foregroundColor(.accentColor)
@@ -27,22 +27,22 @@ public struct ControlView: View {
             }
             
             WideStepper($value, onIncrement: onIncrement, onDecrement: onDecrement) {
-                WideSlider($value)
+                WideSlider($value).padding(.horizontal, 8)
             }
         }
     }
     
     private func onDecrement() {
         if value > 0 {
-            value -= step
-         //   FeedbackManager.light()
+            value -= (1/step)
+            //   FeedbackManager.light()
         }
     }
     
     private func onIncrement() {
         if value < 1 {
-            value += step
-          //  FeedbackManager.light()
+            value += (1/step)
+            //  FeedbackManager.light()
         }
     }
 }
