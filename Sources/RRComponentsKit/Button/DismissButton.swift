@@ -16,7 +16,7 @@ public struct DismissButton: View {
     
     public var body: some View {
         Button(action: action) {
-            RoundedRectangle(cornerRadius: Constants.customRadius)
+            RoundedRectangle(cornerRadius: Constants.cornerRadius)
                 .fill(Color(.systemGray4))
                 .frame(width: 50, height: 5)
         }
@@ -25,6 +25,6 @@ public struct DismissButton: View {
 
 struct DismissButton_Previews: PreviewProvider {
     static var previews: some View {
-        DismissButton()
+        DismissButton(action: {})
     }
 }
