@@ -33,7 +33,6 @@ public struct ControlView: View {
                 WideSlider($value).padding(.horizontal)
             }
         }
-        .padding(.vertical, 2)
         .onChange(of: value) { _ in
             if Int(value * step) != roundedNumber && Int(value * step) % 5 == 0 {
                 roundedNumber = Int(value * step)

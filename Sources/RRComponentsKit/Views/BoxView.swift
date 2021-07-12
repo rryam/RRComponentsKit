@@ -44,6 +44,6 @@ public struct BoxView<Content: View, Fill: ShapeStyle>: View {
                 content
             }
         }
-        .padding(.bottom, 8)
+        .padding(.bottom, 4)
     }
 }
