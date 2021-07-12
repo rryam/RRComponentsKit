@@ -16,7 +16,7 @@ public struct AStack<Content: View>: View {
     let type: AStackType
     let content: () -> Content
     
-    init(type: AStackType, @ViewBuilder content: @escaping () -> Content) {
+    public init(type: AStackType, @ViewBuilder content: @escaping () -> Content) {
         self.type = type
         self.content = content
     }
