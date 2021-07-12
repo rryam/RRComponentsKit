@@ -11,7 +11,7 @@ public struct PrimaryButton: View {
     private var title: String
     private var action: () -> ()
     
-    public init(_ title: String, action: @escaping () -> Void) {
+    public init(_ title: String, _ action: @escaping () -> Void) {
         self.title = title
         self.action = action
     }
@@ -26,6 +26,6 @@ public struct PrimaryButton: View {
 
 struct ColoredButton_Previews: PreviewProvider {
     static var previews: some View {
-        PrimaryButton("Evaluate", action: {})
+        PrimaryButton("Evaluate", {})
     }
 }

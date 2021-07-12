@@ -10,7 +10,7 @@ import SwiftUI
 public struct DismissButton: View {
     var action: () -> ()
 
-    public init(action: @escaping () -> ()) {
+    public init(_ action: @escaping () -> ()) {
         self.action = action
     }
     
@@ -25,6 +25,6 @@ public struct DismissButton: View {
 
 struct DismissButton_Previews: PreviewProvider {
     static var previews: some View {
-        DismissButton(action: {})
+        DismissButton({})
     }
 }

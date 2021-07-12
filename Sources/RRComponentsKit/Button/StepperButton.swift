@@ -13,7 +13,7 @@ public struct StepperButton: View {
     private var foregroundColor: Color
     private var action: () -> ()
 
-    public init(imageName: String, label: String, foreground: Color, action: @escaping () -> Void) {
+    public init(imageName: String, label: String, foreground: Color, _ action: @escaping () -> Void) {
         self.imageName = imageName
         self.label = label
         self.action = action

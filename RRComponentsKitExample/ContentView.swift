@@ -85,9 +85,9 @@ struct ControlsView: View {
 struct ButtonsView: View {
     var body: some View {
         VStack {
-            SecondaryButton("Show", action: {})
-            PrimaryButton("Next", action: {})
-            SecondaryButton("Try again", action: {})
+            SecondaryButton("Show", {})
+            PrimaryButton("Next", {})
+            SecondaryButton("Try again", {})
         }
     }
 }
