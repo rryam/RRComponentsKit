@@ -8,11 +8,11 @@
 import SwiftUI
 
 public struct ScoreView: View {
-    var seconds: Double
+    var seconds: Int
     var score: Double
     var highScore: Double
     
-    public init(_ score: Double, _ highScore: Double, seconds: Double = 15.0) {
+    public init(_ score: Double, _ highScore: Double, seconds: Int = 15) {
         self.seconds = seconds
         self.highScore = highScore
         self.score = score
@@ -30,7 +30,7 @@ public struct ScoreView: View {
 
 struct AnalyticsScoreView<Content: View>: View {
     var highScore: Double
-    var secondsTaken: Double
+    var secondsTaken: Int
     var scoreRing: () -> Content
     
     var body: some View {
