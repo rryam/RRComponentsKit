@@ -30,6 +30,7 @@
 		0A614AFD2608C87F0014F814 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A614AFC2608C87F0014F814 /* Text.swift */; };
 		0A6BA6D9269CDBDD007BD3E0 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6BA6D8269CDBDD007BD3E0 /* SecondaryButton.swift */; };
 		0A6BA6DB269CDC07007BD3E0 /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6BA6DA269CDC07007BD3E0 /* SecondaryButtonStyle.swift */; };
+		0A6BA6DD269CDE9E007BD3E0 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6BA6DC269CDE9E007BD3E0 /* DismissButton.swift */; };
 		0A7C37A3269CB1940023538C /* AStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7C37A2269CB1940023538C /* AStack.swift */; };
 		0A82E31A261BFCFB0024F96D /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82E319261BFCFB0024F96D /* RingView.swift */; };
 		0A948E782697AF9B006C8C00 /* NavTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A948E772697AF9B006C8C00 /* NavTitleView.swift */; };
@@ -89,6 +90,7 @@
 		0A614AFC2608C87F0014F814 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		0A6BA6D8269CDBDD007BD3E0 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		0A6BA6DA269CDC07007BD3E0 /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
+		0A6BA6DC269CDE9E007BD3E0 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		0A7C37A2269CB1940023538C /* AStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AStack.swift; sourceTree = "<group>"; };
 		0A82E319261BFCFB0024F96D /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		0A948E772697AF9B006C8C00 /* NavTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTitleView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				0A4320CA2611F56C00BF1EF9 /* StepperButton.swift */,
 				0AC1BB67261229350017CD43 /* NavigationButton.swift */,
 				0AB27D2E269A1AAE00817A15 /* WideStepperButton.swift */,
+				0A6BA6DC269CDE9E007BD3E0 /* DismissButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				0A948E782697AF9B006C8C00 /* NavTitleView.swift in Sources */,
 				0A4320C32611F43B00BF1EF9 /* StepperButtonStyle.swift in Sources */,
 				0A08278E2608DAAB009FC75C /* GradientButton.swift in Sources */,
+				0A6BA6DD269CDE9E007BD3E0 /* DismissButton.swift in Sources */,
 				0A4320C72611F4D500BF1EF9 /* Color.swift in Sources */,
 				0AC1BB68261229350017CD43 /* NavigationButton.swift in Sources */,
 				0A6BA6DB269CDC07007BD3E0 /* SecondaryButtonStyle.swift in Sources */,
