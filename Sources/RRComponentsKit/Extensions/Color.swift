@@ -67,3 +67,15 @@ public extension Color {
     
     static let stroke = Color.primary.opacity(0.1)
 }
+
+// Returns a darker shade of the given color
+extension Color {
+    var darker: Color {
+        let components = UIColor(self).cgColor.components
+        let red: CGFloat = components?[0] ?? 0.0
+        let green: CGFloat = components?[1] ?? 0.0
+        let blue: CGFloat = components?[2] ?? 0.0
+        
+        return Color(red: red - 0.1, green: green - 0.1, blue: blue - 0.1)
+    }
+}
