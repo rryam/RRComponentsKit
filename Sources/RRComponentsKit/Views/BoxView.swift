@@ -31,15 +31,7 @@ public struct BoxView<Content: View, Fill: ShapeStyle>: View {
                             .stroke(Color.stroke))
             
             VStack {
-                Text(header.rawValue.uppercased())
-                    .foregroundColor(.white)
-                    .kerning(1.0)
-                    .font(type: .montserrat, weight: .regular, style: .caption1)
-                    .padding(8)
-                    .background(RoundedRectangle(cornerRadius: Constants.cornerRadius / 2)
-                                    .foregroundColor(Color.black.opacity(0.2)))
-                    .padding(8)
-                    .accessibility(addTraits: .isHeader)
+                Text(header.rawValue.uppercased()).blurredBackgroundText()
                 
                 content
             }
