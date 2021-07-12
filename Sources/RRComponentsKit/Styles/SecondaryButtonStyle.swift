@@ -13,7 +13,7 @@ public struct SecondaryButtonStyle: ButtonStyle {
             .foregroundColor(.accentColor)
             .padding(.vertical)
             .frame(maxWidth: .infinity, alignment: .center)
-            .overlay(RoundedRectangle(cornerRadius: Constants.cornerRadius, style: .continuous).stroke(Color.accentColor, lineWidth: 1))
+            .overlay(RoundedRectangle(cornerRadius: Constants.cornerRadius).stroke(Color.accentColor, lineWidth: 1))
             .scaleEffect(configuration.isPressed ? 0.98 : 1.0)
             .opacity(configuration.isPressed ? 0.9 : 1.0)
             .padding(.top)
