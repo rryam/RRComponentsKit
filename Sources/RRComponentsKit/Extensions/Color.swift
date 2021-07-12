@@ -69,7 +69,7 @@ public extension Color {
 }
 
 // Returns a darker shade of the given color
-extension Color {
+public extension Color {
     var darker: Color {
         let components = UIColor(self).cgColor.components
         let red: CGFloat = components?[0] ?? 0.0
