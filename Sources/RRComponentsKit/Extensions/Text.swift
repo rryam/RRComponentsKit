@@ -26,4 +26,10 @@ extension Text {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.top, topPadding)
     }
+    
+    public func buttonText() -> some View {
+        self
+            .kerning(1.0)
+            .font(type: .montserrat, weight: .light, style: .callout)
+    }
 }
