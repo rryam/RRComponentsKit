@@ -31,7 +31,7 @@ enum TabItemType: Int, CaseIterable, Hashable, TabItem {
 }
 
 struct ContentView: View {
-    @StateObject private var tabViewModel = TabBarViewModel(TabItemType.allCases, current: TabItemType.slider)
+    @StateObject private var tabViewModel = TabBarViewModel(TabItemType.allCases, current: TabItemType.button)
     
     var body: some View {
         VStack {
@@ -44,6 +44,7 @@ struct ContentView: View {
                         .tag(item.self)
                 }
             }
+            .accentColor(.pink)
             .tabViewStyle(.page(indexDisplayMode: .never))
             
             TabBarView(viewModel: tabViewModel)
@@ -53,7 +54,7 @@ struct ContentView: View {
     @ViewBuilder func tabItemView(with item: TabItemType) -> some View {
         switch item {
             case .slider: ControlsView()
-            case .button: GradientButton(title: "Evaluate", action: {})
+            case .button: ButtonsView()
             case .box: BoxView(.target, Color.pink) { }
         }
     }
@@ -77,6 +78,16 @@ struct ControlsView: View {
             ControlView($green).accentColor(.green)
             
             ControlView($blue)
+        }
+    }
+}
+
+struct ButtonsView: View {
+    var body: some View {
+        VStack {
+            SecondaryButton("Show", action: {})
+            PrimaryButton("Next", action: {})
+            SecondaryButton("Try again", action: {})
         }
     }
 }

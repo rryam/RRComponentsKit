@@ -1,19 +1,19 @@
 //
-//  PrimaryButtonStyle.swift
+//  SecondaryButtonStyle.swift
 //  RRComponentsKit
 //
-//  Created by Rudrank Riyam on 29/03/21.
+//  Created by Rudrank Riyam on 13/07/21.
 //
 
 import SwiftUI
 
-public struct PrimaryButtonStyle: ButtonStyle {
+public struct SecondaryButtonStyle: ButtonStyle {
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .foregroundColor(.white)
+            .foregroundColor(.accentColor)
             .padding(.vertical)
             .frame(maxWidth: .infinity, alignment: .center)
-            .background(Color.accentColor.cornerRadius(Constants.cornerRadius))
+            .overlay(RoundedRectangle(cornerRadius: Constants.cornerRadius, style: .continuous).stroke(Color.accentColor, lineWidth: 1))
             .scaleEffect(configuration.isPressed ? 0.98 : 1.0)
             .opacity(configuration.isPressed ? 0.9 : 1.0)
             .padding(.top)
