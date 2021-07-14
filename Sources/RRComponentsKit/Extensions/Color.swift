@@ -34,19 +34,19 @@ public extension UIColor {
 
 public extension Color {
     static var gradientGray: Color {
-        #if os(macOS)
+#if os(macOS)
         return Color(NSColor.black)
-        #else
+#else
         return Color(UIColor.systemGray5)
-        #endif
+#endif
     }
     
     static var secondaryBackground: Color {
-        #if os(macOS)
+#if os(macOS)
         return Color(NSColor(red: 28/255, green: 28/255, blue: 30/255, alpha: 1.0))
-        #else
+#else
         return Color(UIColor.systemGray6)
-        #endif
+#endif
     }
     
     /// If the app is in dark mode, returns black, otherwise white. Opposite of .primary Color.
@@ -68,14 +68,18 @@ public extension Color {
     static let stroke = Color.primary.opacity(0.1)
 }
 
-// Returns a darker shade of the given color
+// Returns a darker shade of the given color in light mode, and light share in dark mode
 public extension Color {
-    var darker: Color {
+    var prominence: Color {
+        @Environment(\.colorScheme) var colorScheme: ColorScheme
+        
+        let prominenceValue = colorScheme == .light ? 0.1 : -0.1
+        
         let components = UIColor(self).cgColor.components
         let red: CGFloat = components?[0] ?? 0.0
         let green: CGFloat = components?[1] ?? 0.0
         let blue: CGFloat = components?[2] ?? 0.0
         
-        return Color(red: red - 0.1, green: green - 0.1, blue: blue - 0.1)
+        return Color(red: red - prominenceValue, green: green - prominenceValue, blue: blue - prominenceValue)
     }
 }
