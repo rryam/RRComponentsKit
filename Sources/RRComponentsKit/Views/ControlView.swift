@@ -12,11 +12,13 @@ public struct ControlView: View {
     @State private var roundedNumber: Int = 0
     @Binding var value: Double
     let step: Double
+    let hapticRange: Int
     
     private let generator = UIImpactFeedbackGenerator(style: .medium)
     
-    public init(_ value: Binding<Double>, step: Double = 255) {
+    public init(_ value: Binding<Double>, step: Double = 255, range: Int = 10) {
         self.step = step
+        self.hapticRange = range
         self._value = value
     }
     
@@ -34,7 +36,7 @@ public struct ControlView: View {
             }
         }
         .onChange(of: value) { _ in
-            if Int(value * step) != roundedNumber && Int(value * step) % 5 == 0 {
+            if Int(value * step) != roundedNumber && Int(value * step) % hapticRange == 0 {
                 roundedNumber = Int(value * step)
                 hapticFeedback()
             }
