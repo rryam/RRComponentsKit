@@ -70,10 +70,10 @@ public extension Color {
 
 // Returns a darker shade of the given color in light mode, and light share in dark mode
 public extension Color {
-    var prominence: Color {
+    func prominence(_ value: Double = 0.2) -> Color {
         @Environment(\.colorScheme) var colorScheme: ColorScheme
         
-        let prominenceValue = colorScheme == .light ? 0.1 : -0.1
+        let prominenceValue = colorScheme == .light ? value : -value
         
         let components = UIColor(self).cgColor.components
         let red: CGFloat = components?[0] ?? 0.0
