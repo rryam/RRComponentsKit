@@ -46,9 +46,7 @@ public struct PrimaryButton: View {
 struct ColoredButton_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            PrimaryButton("Evaluate", {})
-            
-            PrimaryGradientButton("Evaluate", Gradient(colors: [.pink.prominence, Color(.systemIndigo).prominence]), {})
+            PrimaryButton("Evaluate", {})            
         }
     }
 }
