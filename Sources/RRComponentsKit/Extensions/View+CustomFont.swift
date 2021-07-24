@@ -11,6 +11,10 @@ extension View {
     public func font(type: FontType =  .poppins, weight: FontWeight = .regular, style: UIFont.TextStyle = .body) -> some View {
         self.font(Font.custom(type.name + weight.name, size: UIFont.preferredFont(forTextStyle: style).pointSize))
     }
+    
+    public func font(type: FontType =  .montserrat, weight: FontWeight = .regular, size: CGFloat) -> some View {
+        self.font(.custom(type.name + weight.name, size: size))
+    }
 }
 
 public enum FontType: String {
