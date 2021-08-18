@@ -14,7 +14,9 @@ public struct ControlView: View {
     let step: Double
     let hapticRange: Int
     
+#if os(iOS)
     private let generator = UIImpactFeedbackGenerator(style: .medium)
+#endif
     
     public init(_ value: Binding<Double>, step: Double = 255, range: Int = 10) {
         self.step = step
@@ -42,7 +44,9 @@ public struct ControlView: View {
             }
         }
         .onAppear {
+            #if os(iOS)
             generator.prepare()
+            #endif
         }
     }
     
@@ -61,7 +65,9 @@ public struct ControlView: View {
     }
     
     private func hapticFeedback() {
+        #if os(iOS)
         generator.impactOccurred()
+        #endif
     }
 }
 

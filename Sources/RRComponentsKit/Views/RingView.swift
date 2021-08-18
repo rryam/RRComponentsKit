@@ -120,7 +120,7 @@ struct ProgressRingView: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(Color(.systemGray6), style:
+                .stroke(Color.systemGrey6, style:
                             StrokeStyle(lineWidth: lineWidth))
                 .frame(width: size, height: size)
             
@@ -137,5 +137,15 @@ struct ProgressRingView: View {
                                   axis: (x: 1, y: 0, z: 0))
                 .frame(width: size, height: size)
         }
+    }
+}
+
+extension Color {
+    static var systemGrey6: Color {
+        #if os(macOS)
+        return Color(NSColor.lightGray)
+        #else
+        return Color(UIColor.systemGray6)
+        #endif
     }
 }

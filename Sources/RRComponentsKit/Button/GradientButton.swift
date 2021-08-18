@@ -9,11 +9,15 @@ import SwiftUI
 
 public struct GradientButton: View {
     private var title: String
+    
+    #if os(iOS)
     private var font: UIFont.TextStyle = .headline
+    #else
+    private var font: NSFont.TextStyle = .headline
+    #endif
     private var action: () -> ()
     
-    public init(title: String, font: UIFont.TextStyle = .headline, action: @escaping () -> ()) {
-        self.font = font
+    public init(title: String, action: @escaping () -> ()) {
         self.title = title
         self.action = action
     }

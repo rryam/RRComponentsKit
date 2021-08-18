@@ -17,7 +17,7 @@ public struct DismissButton: View {
     public var body: some View {
         Button(action: action) {
             RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                .fill(Color(.systemGray4))
+                .fill(Color.gray)
                 .frame(width: 50, height: 5)
         }
     }
