@@ -43,6 +43,23 @@ public extension NSColor {
         self.init(red: red, green: green, blue: blue, alpha: 1.0)
     }
 }
+
+extension NSColor {
+   public class func dynamicColor(light: NSColor, dark: NSColor) -> NSColor {
+      if #available(OSX 10.15, *) {
+         return NSColor(name: nil) {
+            switch $0.name {
+            case .darkAqua, .vibrantDark, .accessibilityHighContrastDarkAqua, .accessibilityHighContrastVibrantDark:
+               return dark
+            default:
+               return light
+            }
+         }
+      } else {
+        return light
+      }
+   }
+}
 #endif
 
 public extension Color {
@@ -91,23 +108,6 @@ public extension Color {
     }
     
     static let stroke = Color.primary.opacity(0.1)
-}
-
-extension NSColor {
-   public class func dynamicColor(light: NSColor, dark: NSColor) -> NSColor {
-      if #available(OSX 10.15, *) {
-         return NSColor(name: nil) {
-            switch $0.name {
-            case .darkAqua, .vibrantDark, .accessibilityHighContrastDarkAqua, .accessibilityHighContrastVibrantDark:
-               return dark
-            default:
-               return light
-            }
-         }
-      } else {
-        return light
-      }
-   }
 }
 
 // Returns a darker shade of the given color in light mode, and light share in dark mode
