@@ -38,24 +38,24 @@ struct ContentView: View {
             ScoreView(4, 34)
             
             ScoreView(94, 34)
-
-        ScoreView(54, 34)
-    }
-//        VStack {
-//            NavTitleView("Title Goes here").padding(.horizontal)
-//
-//            TabView(selection: $tabViewModel.currentTab) {
-//                ForEach(TabItemType.allCases, id: \.id) { item in
-//                    tabItemView(with: item)
-//                        .padding()
-//                        .tag(item.self)
-//                }
-//            }
-//            .accentColor(.pink)
-//            .tabViewStyle(.page(indexDisplayMode: .never))
-//
-//            TabBarView(viewModel: tabViewModel)
-//        }
+            
+            ScoreView(54, 34)
+        }
+        //        VStack {
+        //            NavTitleView("Title Goes here").padding(.horizontal)
+        //
+        //            TabView(selection: $tabViewModel.currentTab) {
+        //                ForEach(TabItemType.allCases, id: \.id) { item in
+        //                    tabItemView(with: item)
+        //                        .padding()
+        //                        .tag(item.self)
+        //                }
+        //            }
+        //            .accentColor(.pink)
+        //            .tabViewStyle(.page(indexDisplayMode: .never))
+        //
+        //            TabBarView(viewModel: tabViewModel)
+        //        }
     }
     
     @ViewBuilder func tabItemView(with item: TabItemType) -> some View {

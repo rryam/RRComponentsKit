@@ -141,6 +141,6 @@ struct ProminenceColor: ViewModifier {
         let green: CGFloat = components?[1] ?? 0.0
         let blue: CGFloat = components?[2] ?? 0.0
         
-        return Color(red: red - prominenceValue, green: green - prominenceValue, blue: blue - prominenceValue)
+        return Color(red: Double(red) - prominenceValue, green: Double(green) - prominenceValue, blue: Double(blue) - prominenceValue)
     }
 }

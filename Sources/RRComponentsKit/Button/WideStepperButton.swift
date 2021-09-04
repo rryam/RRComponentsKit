@@ -23,7 +23,7 @@ struct WideStepperButton: View {
                 .foregroundColor(condition ? .accentColor : .secondaryBackground)
                 .padding(2)
         }
-       .buttonStyle(.stepper)
+       .buttonStyle(StepperButtonStyle())
     }
 }
 

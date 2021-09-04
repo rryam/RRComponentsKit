@@ -69,7 +69,7 @@ struct UserScoreView: View {
         GeometryReader { proxy in
             let width = proxy.size.width
             ZStack {
-                ProgressRingView(progress: score / 100)
+                ProgressRingView(progress: CGFloat(score) / 100)
                     .frame(width: width, height: width)
                 VStack(spacing: 0) {
                     Text("SCORE".lowercased())

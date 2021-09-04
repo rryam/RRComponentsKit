@@ -21,12 +21,13 @@ struct WideSlider: View {
     var body: some View {
         CustomSlider(value: $value, range: (0, 1)) { modifiers in
             ZStack(alignment: .center) {
-                LinearGradient(colors: [.traitsBackground], startPoint: .leading, endPoint: .trailing)
+                
+                LinearGradient(gradient: Gradient(colors: [.traitsBackground]), startPoint: .leading, endPoint: .trailing)
                     .modifier(modifiers.barRight)
                     .overlay(RoundedRectangle(cornerRadius: Constants.cornerRadius)
                                 .stroke(Color.stroke))
                 
-                LinearGradient(colors: colors, startPoint: .leading, endPoint: .trailing)
+                LinearGradient(gradient: Gradient(colors: colors), startPoint: .leading, endPoint: .trailing)
                     .modifier(modifiers.barLeft)
                 
                 Circle()
