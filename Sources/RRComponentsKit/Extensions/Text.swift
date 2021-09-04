@@ -10,13 +10,13 @@ import SwiftUI
 extension Text {
     public func customTitleText(size: CGFloat) -> some View {
         self
-            .font(weight: .black, style: .largeTitle)
+            .font(type: .poppins, weight: .black, style: .largeTitle)
             .multilineTextAlignment(.center)
     }
 
     public func titleText() -> some View {
         self
-            .font(weight: .bold, style: .title1)
+            .font(type: .poppins, weight: .bold, style: .title1)
     }
 
     public func largeTitleText(type: FontType, topPadding: CGFloat = 37) -> some View {
