@@ -9,11 +9,11 @@ import SwiftUI
 
 #if os(iOS)
 extension Text {
-    public func font(type: FontType =  .poppins, weight: FontWeight = .regular, style: UIFont.TextStyle = .body) -> Text {
+    public func font(type: FontType, weight: FontWeight, style: UIFont.TextStyle) -> Text {
         self.font(Font.custom(type.name + weight.name, size: UIFont.preferredFont(forTextStyle: style).pointSize))
     }
     
-    public func font(type: FontType =  .montserrat, weight: FontWeight = .regular, size: CGFloat) -> Text {
+    public func font(type: FontType, weight: FontWeight, size: CGFloat) -> Text {
         self.font(.custom(type.name + weight.name, size: size))
     }
 }
@@ -21,11 +21,11 @@ extension Text {
 
 #if os(macOS)
 extension Text {
-    public func font(type: FontType =  .poppins, weight: FontWeight = .regular, style: NSFont.TextStyle = .body) -> Text {
+    public func font(type: FontType, weight: FontWeight, style: NSFont.TextStyle) -> Text {
         self.font(Font.custom(type.name + weight.name, size: NSFont.preferredFont(forTextStyle: style).pointSize))
     }
     
-    public func font(type: FontType =  .montserrat, weight: FontWeight = .regular, size: CGFloat) -> Text {
+    public func font(type: FontType, weight: FontWeight, size: CGFloat) -> Text {
         self.font(.custom(type.name + weight.name, size: size))
     }
 }
