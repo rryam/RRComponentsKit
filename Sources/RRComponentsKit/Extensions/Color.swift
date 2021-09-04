@@ -112,30 +112,13 @@ public extension Color {
 
 // Returns a darker shade of the given color in light mode, and light share in dark mode
 public extension Color {
-    var prominence: some View {
-        self
-            .modifier(ProminenceColor(self))
-    }
-}
-
-struct ProminenceColor: ViewModifier {
-    @Environment (\.colorScheme) var scheme
-    
-    private var color: Color
-    private var value: Double
-    
-    init(_ color: Color, value: Double = 0.2) {
-        self.color = color
-        self.value = value
-    }
-    
-    func body(content: Content) -> Color {
+    func prominence(value: Double = 0.2, scheme: ColorScheme) -> Color {
         let prominenceValue = scheme == .light ? value : -value
         
         #if os(macOS)
-        let components = NSColor(color).cgColor.components
+        let components = NSColor(self).cgColor.components
         #else
-        let components = UIColor(color).cgColor.components
+        let components = UIColor(self).cgColor.components
         #endif
         let red: CGFloat = components?[0] ?? 0.0
         let green: CGFloat = components?[1] ?? 0.0

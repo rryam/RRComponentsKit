@@ -12,6 +12,8 @@ public struct ScoreView: View {
     var score: Double
     var highScore: Double
     
+    @Environment(\.colorScheme) var scheme
+    
     public init(_ score: Double, _ highScore: Double, seconds: Int = 15) {
         self.seconds = seconds
         self.highScore = highScore
@@ -33,6 +35,7 @@ public struct ScoreView: View {
                 AnalyticsInfoView(title: "SECONDS \nTAKEN".lowercased(), value: String(describing: seconds))
             }
         }
+        .accentColor(Color.accentColor.prominence(scheme: scheme))
         .padding(.top)
     }
 }

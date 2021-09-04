@@ -29,7 +29,6 @@ extension Text {
     
     public func buttonText() -> some View {
         self
-            .foregroundColor(.white)
             .kerning(1.0)
             .font(type: .poppins, weight: .semiBold, style: .headline)
     }

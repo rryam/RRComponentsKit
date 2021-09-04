@@ -20,7 +20,9 @@ public struct PrimaryGradientButton: View {
     
     public var body: some View {
         Button(action: withAnimation { action }) {
-            Text(title).buttonText()
+            Text(title)
+                .foregroundColor(.white)
+                .buttonText()
         }
         .buttonStyle(PrimaryButtonStyle({ LinearGradient(gradient: gradient, startPoint: .top, endPoint: .bottom).cornerRadius(Constants.cornerRadius) }))
     }
@@ -37,7 +39,9 @@ public struct PrimaryButton: View {
     
     public var body: some View {
         Button(action: withAnimation { action }) {
-            Text(title).buttonText()
+            Text(title)
+                .foregroundColor(.white)
+                .buttonText()
         }
         .buttonStyle(PrimaryButtonStyle({ Color.accentColor.cornerRadius(Constants.cornerRadius) }))
     }
