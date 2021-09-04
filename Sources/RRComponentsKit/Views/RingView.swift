@@ -19,20 +19,18 @@ public struct ScoreView: View {
     }
     
     public var body: some View {
-        VStack {
-            HStack {
-                UserScoreView(score)
-                    .padding(.horizontal)
-                                
+        HStack {
+            UserScoreView(score)
+                .padding(.horizontal)
+            
+            Divider()
+            
+            VStack {
+                AnalyticsInfoView(title: "HIGH \nSCORE".lowercased(), value: String(format: "%.1f", highScore))
+                
                 Divider()
                 
-                VStack {
-                    AnalyticsInfoView(title: "HIGH \nSCORE".lowercased(), value: String(format: "%.1f", highScore))
-                    
-                    Divider()
-                    
-                    AnalyticsInfoView(title: "SECONDS \nTAKEN".lowercased(), value: String(describing: seconds))
-                }
+                AnalyticsInfoView(title: "SECONDS \nTAKEN".lowercased(), value: String(describing: seconds))
             }
         }
         .padding(.top)
@@ -47,7 +45,7 @@ struct AnalyticsInfoView: View {
         VStack {
             Text(title)
                 .kerning(1)
-                .font(type: .poppins, weight: .light, style: .caption2)
+                .font(type: .poppins, weight: .light, style: .caption1)
             
             Text(value)
                 .kerning(1)
@@ -68,7 +66,8 @@ struct UserScoreView: View {
     var body: some View {
         GeometryReader { proxy in
             let width = proxy.size.width
-            ZStack {
+            
+            ZStack(alignment: .center) {
                 ProgressRingView(progress: CGFloat(score) / 100)
                     .frame(width: width, height: width)
                 VStack(spacing: 0) {
@@ -78,13 +77,13 @@ struct UserScoreView: View {
                     
                     Text(String(format: "%.1f", score))
                         .kerning(1)
-                        .font(type: .poppins, weight: .black, style: .largeTitle)
+                        .font(type: .poppins, weight: .black, style: .title1)
                         .foregroundColor(.accentColor)
                         .accessibility(label: Text("\(String(format: "%.1f", score)) points"))
                 }
                 .accessibilityElement(children: .combine)
             }
-            .frame(height: proxy.size.width)
+            .frame(width: width, height: width, alignment: .center)
         }
     }
 }
