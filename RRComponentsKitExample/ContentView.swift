@@ -32,15 +32,16 @@ enum TabItemType: Int, CaseIterable, Hashable, TabItem {
 
 struct ContentView: View {
     @StateObject private var tabViewModel = TabBarViewModel(TabItemType.allCases, current: TabItemType.button)
-    
+    @Environment(\.colorScheme) var scheme
+
     var body: some View {
         VStack {
-            ScoreView(4, 34)
+            ScoreView(4, 34, color: .green)
             
-            ScoreView(94, 34)
-            
-            ScoreView(54, 34)
+            ScoreView(94, 34, color: .brown)
+            ScoreView(54, 34, color: .red.prominence(scheme: scheme))
         }
+        .accentColor(.red)
         //        VStack {
         //            NavTitleView("Title Goes here").padding(.horizontal)
         //

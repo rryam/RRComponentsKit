@@ -8,80 +8,88 @@
 import SwiftUI
 
 public struct ScoreView: View {
-    var seconds: Int
-    var score: Double
-    var highScore: Double
-    
-    @Environment(\.colorScheme) var scheme
-    
-    public init(_ score: Double, _ highScore: Double, seconds: Int = 15) {
+    private var seconds: Int
+    private var score: Double
+    private var highScore: Double
+    private var color: Color
+        
+    public init(_ score: Double, _ highScore: Double, seconds: Int = 15, color: Color) {
         self.seconds = seconds
         self.highScore = highScore
         self.score = score
+        self.color = color
     }
     
     public var body: some View {
         HStack {
-            UserScoreView(score)
+            UserScoreView(score, color: color)
                 .padding(.horizontal)
             
             Divider()
             
             VStack {
-                AnalyticsInfoView(title: "HIGH \nSCORE".lowercased(), value: String(format: "%.1f", highScore))
+                AnalyticsInfoView("HIGH \nSCORE".lowercased(), value: String(format: "%.1f", highScore), color: color)
                 
                 Divider()
                 
-                AnalyticsInfoView(title: "SECONDS \nTAKEN".lowercased(), value: String(describing: seconds))
+                AnalyticsInfoView("SECONDS \nTAKEN".lowercased(), value: String(describing: seconds), color: color)
             }
         }
-        .accentColor(Color.accentColor.prominence(scheme: scheme))
         .padding(.top)
     }
 }
 
 struct AnalyticsInfoView: View {
-    var title: String
-    var value: String
+    private var title: String
+    private var value: String
+    private var color: Color
+        
+    public init(_ title: String, value: String, color: Color) {
+        self.title = title
+        self.value = value
+        self.color = color
+    }
     
     var body: some View {
         VStack {
             Text(title)
                 .kerning(1)
                 .font(type: .poppins, weight: .light, style: .caption1)
+                .foregroundColor(.primary)
             
             Text(value)
                 .kerning(1)
                 .font(type: .poppins, weight: .bold, style: .title2)
-                .foregroundColor(.accentColor)
+                .foregroundColor(color)
         }
         .multilineTextAlignment(.center)
     }
 }
 
 struct UserScoreView: View {
-    var score: Double
+    private var score: Double
+    private var color: Color
     
-    public init(_ score: Double) {
+    public init(_ score: Double, color: Color) {
         self.score = score
+        self.color = color
     }
     
     var body: some View {
         GeometryReader { geometry in
-            let width = geometry.size.width
-            
             ZStack {
-                ProgressRingView(progress: CGFloat(score) / 100)
+                ProgressRingView(progress: CGFloat(score) / 100, foregroundColor: color)
                 VStack(spacing: 0) {
                     Text("SCORE".lowercased())
                         .kerning(1)
                         .font(type: .poppins, weight: .light, style: .caption1)
+                        .foregroundColor(.primary)
                     
                     Text(String(format: "%.1f", score))
                         .kerning(1)
                         .font(type: .poppins, weight: .black, style: .title1)
-                        .foregroundColor(.accentColor)
                         .accessibility(label: Text("\(String(format: "%.1f", score)) points"))
+                        .foregroundColor(color)
                 }
                 .accessibilityElement(children: .combine)
             }
@@ -92,7 +100,7 @@ struct UserScoreView: View {
 
 struct ScoreView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreView(85.0, 100.0).accentColor(Color.red)
+        ScoreView(85.0, 100.0, color: .red)
     }
 }
 
@@ -100,7 +108,13 @@ struct ProgressRingView: View {
     var progress: CGFloat
     var lineWidth: CGFloat = 20
     var size: CGFloat = 150
-    var gradient = [.accentColor, Color.accentColor.opacity(0.5)]
+    var foregroundColor: Color
+    
+    @Environment(\.colorScheme) var scheme
+
+    var gradient: [Color] {
+        [foregroundColor.prominence(scheme: scheme), foregroundColor.prominence(scheme: scheme).opacity(0.5)]
+    }
     
     var body: some View {
         ZStack {

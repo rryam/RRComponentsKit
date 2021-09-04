@@ -21,7 +21,7 @@ public struct SecondaryGradientButton: View {
     public var body: some View {
         Button(action: withAnimation { action }) {
             Text(title)
-                .foregroundColor(.traitsBackground)
+                .foregroundColor(.primary)
                 .buttonText()
         }
         .buttonStyle(SecondaryButtonStyle())
@@ -40,7 +40,7 @@ public struct SecondaryButton: View {
     public var body: some View {
         Button(action: withAnimation { action }) {
             Text(title)
-                .foregroundColor(.traitsBackground)
+                .foregroundColor(.primary)
                 .buttonText()
         }
         .buttonStyle(SecondaryButtonStyle())
