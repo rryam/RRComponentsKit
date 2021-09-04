@@ -31,7 +31,7 @@ public struct BoxView<Content: View, Fill: ShapeStyle>: View {
                             .stroke(Color.stroke))
             
             VStack {
-                Text(header.rawValue.uppercased()).blurredBackgroundText()
+                Text(header.rawValue.lowercased()).blurredBackgroundText()
                 
                 content
             }

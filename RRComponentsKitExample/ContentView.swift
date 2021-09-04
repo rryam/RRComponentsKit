@@ -26,7 +26,7 @@ enum TabItemType: Int, CaseIterable, Hashable, TabItem {
     }
     
     var name: String {
-        String(describing: self).uppercased()
+        String(describing: self).lowercased()
     }
 }
 
