@@ -21,28 +21,18 @@ public struct ScoreView: View {
     public var body: some View {
         VStack {
             HStack {
-                Spacer()
-                
                 UserScoreView(score)
-                
-                Spacer()
-                
+                    .padding(.horizontal)
+                                
                 Divider()
-                    .layoutPriority(-1)
-                
-                Spacer()
                 
                 VStack {
                     AnalyticsInfoView(title: "HIGH \nSCORE".lowercased(), value: String(format: "%.1f", highScore))
                     
                     Divider()
                     
-                    Spacer()
                     AnalyticsInfoView(title: "SECONDS \nTAKEN".lowercased(), value: String(describing: seconds))
                 }
-                .layoutPriority(-1)
-                
-                Spacer()
             }
         }
         .padding(.top)
@@ -76,21 +66,25 @@ struct UserScoreView: View {
     }
     
     var body: some View {
-        ZStack {
-            ProgressRingView(progress: score / 100)
-            
-            VStack(spacing: 0) {
-                Text("SCORE".lowercased())
-                    .kerning(1)
-                    .font(type: .poppins, weight: .light, style: .caption1)
-                
-                Text(String(format: "%.1f", score))
-                    .kerning(1)
-                    .font(type: .poppins, weight: .black, style: .largeTitle)
-                    .foregroundColor(.accentColor)
-                    .accessibility(label: Text("\(String(format: "%.1f", score)) points"))
+        GeometryReader { proxy in
+            let width = proxy.size.width
+            ZStack {
+                ProgressRingView(progress: score / 100)
+                    .frame(width: width, height: width)
+                VStack(spacing: 0) {
+                    Text("SCORE".lowercased())
+                        .kerning(1)
+                        .font(type: .poppins, weight: .light, style: .caption1)
+                    
+                    Text(String(format: "%.1f", score))
+                        .kerning(1)
+                        .font(type: .poppins, weight: .black, style: .largeTitle)
+                        .foregroundColor(.accentColor)
+                        .accessibility(label: Text("\(String(format: "%.1f", score)) points"))
+                }
+                .accessibilityElement(children: .combine)
             }
-            .accessibilityElement(children: .combine)
+            .frame(height: proxy.size.width)
         }
     }
 }
@@ -112,7 +106,6 @@ struct ProgressRingView: View {
             Circle()
                 .stroke(Color.systemGrey6, style:
                             StrokeStyle(lineWidth: lineWidth))
-                .frame(width: size, height: size)
             
             Circle()
                 .trim(from: 1 - progress, to: 1)
@@ -125,7 +118,6 @@ struct ProgressRingView: View {
                 .rotationEffect(Angle(degrees: 90))
                 .rotation3DEffect(Angle(degrees: 180),
                                   axis: (x: 1, y: 0, z: 0))
-                .frame(minWidth: size / 2, maxWidth: size, minHeight: size / 2, maxHeight: size)
         }
     }
 }
