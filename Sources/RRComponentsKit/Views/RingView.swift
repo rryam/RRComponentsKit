@@ -20,42 +20,32 @@ public struct ScoreView: View {
     
     public var body: some View {
         VStack {
-            AnalyticsScoreView(highScore: highScore, secondsTaken: seconds) {
+            HStack {
+                Spacer()
+                
                 UserScoreView(score)
+                
+                Spacer()
+                
+                Divider()
+                    .layoutPriority(-1)
+                
+                Spacer()
+                
+                VStack {
+                    AnalyticsInfoView(title: "HIGH \nSCORE".lowercased(), value: String(format: "%.1f", highScore))
+                    
+                    Divider()
+                    
+                    Spacer()
+                    AnalyticsInfoView(title: "SECONDS \nTAKEN".lowercased(), value: String(describing: seconds))
+                }
+                .layoutPriority(-1)
+                
+                Spacer()
             }
         }
         .padding(.top)
-    }
-}
-
-struct AnalyticsScoreView<Content: View>: View {
-    var highScore: Double
-    var secondsTaken: Int
-    var scoreRing: () -> Content
-    
-    var body: some View {
-        HStack {
-            Spacer()
-            
-            scoreRing()
-            
-            Spacer()
-            
-            Divider()
-                .layoutPriority(-1)
-            
-            Spacer()
-
-            VStack {
-                AnalyticsInfoView(title: "HIGH \nSCORE".lowercased(), value: String(format: "%.1f", highScore))
-                
-                Spacer()
-                AnalyticsInfoView(title: "SECONDS \nTAKEN".lowercased(), value: String(describing: secondsTaken))
-            }
-            .layoutPriority(-1)
-            
-            Spacer()
-        }
     }
 }
 
@@ -90,10 +80,10 @@ struct UserScoreView: View {
             ProgressRingView(progress: score / 100)
             
             VStack(spacing: 0) {
-            Text("SCORE".lowercased())
-                .kerning(1)
-                .font(type: .poppins, weight: .light, style: .caption1)
-            
+                Text("SCORE".lowercased())
+                    .kerning(1)
+                    .font(type: .poppins, weight: .light, style: .caption1)
+                
                 Text(String(format: "%.1f", score))
                     .kerning(1)
                     .font(type: .poppins, weight: .black, style: .largeTitle)
@@ -142,10 +132,10 @@ struct ProgressRingView: View {
 
 extension Color {
     static var systemGrey6: Color {
-        #if os(macOS)
+#if os(macOS)
         return Color(NSColor.lightGray)
-        #else
+#else
         return Color(UIColor.systemGray6)
-        #endif
+#endif
     }
 }
