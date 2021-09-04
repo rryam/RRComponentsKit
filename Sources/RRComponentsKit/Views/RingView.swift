@@ -47,10 +47,10 @@ struct AnalyticsScoreView<Content: View>: View {
             Spacer()
 
             VStack {
-                AnalyticsInfoView(title: "HIGH \nSCORE", value: String(format: "%.1f", highScore))
+                AnalyticsInfoView(title: "HIGH \nSCORE".lowercased(), value: String(format: "%.1f", highScore))
                 
                 Spacer()
-                AnalyticsInfoView(title: "SECONDS \nTAKEN", value: String(describing: secondsTaken))
+                AnalyticsInfoView(title: "SECONDS \nTAKEN".lowercased(), value: String(describing: secondsTaken))
             }
             .layoutPriority(-1)
             
@@ -90,7 +90,7 @@ struct UserScoreView: View {
             ProgressRingView(progress: score / 100)
             
             VStack(spacing: 0) {
-            Text("SCORE")
+            Text("SCORE".lowercased())
                 .kerning(1)
                 .font(type: .poppins, weight: .light, style: .caption1)
             
