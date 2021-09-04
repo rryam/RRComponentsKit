@@ -10,7 +10,6 @@ import SwiftUI
 public struct SecondaryButtonStyle: ButtonStyle {
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .foregroundColor(.accentColor)
             .padding(.vertical)
             .frame(maxWidth: .infinity, alignment: .center)
             .overlay(RoundedRectangle(cornerRadius: Constants.cornerRadius).stroke(LinearGradient(gradient: Gradient(colors: [Color.accentColor, Color.accentColor.opacity(0.5)]), startPoint: .top, endPoint: .bottom), lineWidth: 1))
