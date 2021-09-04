@@ -125,7 +125,7 @@ struct ProgressRingView: View {
                 .rotationEffect(Angle(degrees: 90))
                 .rotation3DEffect(Angle(degrees: 180),
                                   axis: (x: 1, y: 0, z: 0))
-                .frame(width: size, height: size)
+                .frame(minWidth: size / 2, maxWidth: size, minHeight: size / 2, maxHeight: size)
         }
     }
 }
