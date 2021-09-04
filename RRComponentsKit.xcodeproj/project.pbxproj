@@ -34,6 +34,7 @@
 		0A7C37A3269CB1940023538C /* AStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7C37A2269CB1940023538C /* AStack.swift */; };
 		0A82E31A261BFCFB0024F96D /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82E319261BFCFB0024F96D /* RingView.swift */; };
 		0A948E782697AF9B006C8C00 /* NavTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A948E772697AF9B006C8C00 /* NavTitleView.swift */; };
+		0AA8D20E26E38E2100003497 /* MadeWithLoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA8D20D26E38E2100003497 /* MadeWithLoveView.swift */; };
 		0AB27D2F269A1AAE00817A15 /* WideStepperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB27D2E269A1AAE00817A15 /* WideStepperButton.swift */; };
 		0AB27D31269A20D600817A15 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB27D30269A20D600817A15 /* ControlView.swift */; };
 		0AC1BB68261229350017CD43 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1BB67261229350017CD43 /* NavigationButton.swift */; };
@@ -94,6 +95,7 @@
 		0A7C37A2269CB1940023538C /* AStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AStack.swift; sourceTree = "<group>"; };
 		0A82E319261BFCFB0024F96D /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		0A948E772697AF9B006C8C00 /* NavTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTitleView.swift; sourceTree = "<group>"; };
+		0AA8D20D26E38E2100003497 /* MadeWithLoveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadeWithLoveView.swift; sourceTree = "<group>"; };
 		0AB27D2E269A1AAE00817A15 /* WideStepperButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideStepperButton.swift; sourceTree = "<group>"; };
 		0AB27D30269A20D600817A15 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
 		0AC1BB67261229350017CD43 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				0A544765269A1304005A40C1 /* BoxView.swift */,
 				0AB27D30269A20D600817A15 /* ControlView.swift */,
 				0A7C37A2269CB1940023538C /* AStack.swift */,
+				0AA8D20D26E38E2100003497 /* MadeWithLoveView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				0A6BA6DD269CDE9E007BD3E0 /* DismissButton.swift in Sources */,
 				0A4320C72611F4D500BF1EF9 /* Color.swift in Sources */,
 				0AC1BB68261229350017CD43 /* NavigationButton.swift in Sources */,
+				0AA8D20E26E38E2100003497 /* MadeWithLoveView.swift in Sources */,
 				0A6BA6DB269CDC07007BD3E0 /* SecondaryButtonStyle.swift in Sources */,
 				0A4320D32611F80400BF1EF9 /* WideSlider.swift in Sources */,
 				0A0827962608E881009FC75C /* GradientButtonStyle.swift in Sources */,
