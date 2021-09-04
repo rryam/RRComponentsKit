@@ -30,14 +30,14 @@ extension Text {
     public func buttonText() -> some View {
         self
             .kerning(1.0)
-            .font(type: .montserrat, weight: .regular, style: .caption1)
+            .font(type: .poppins, weight: .regular, style: .caption1)
     }
     
     public func blurredBackgroundText() -> some View {
         self
             .foregroundColor(.white)
             .kerning(1.0)
-            .font(type: .montserrat, weight: .regular, style: .caption1)
+            .font(type: .poppins, weight: .regular, style: .caption1)
             .padding(8)
             .background(RoundedRectangle(cornerRadius: Constants.cornerRadius / 2)
                             .foregroundColor(Color.black.opacity(0.2)))

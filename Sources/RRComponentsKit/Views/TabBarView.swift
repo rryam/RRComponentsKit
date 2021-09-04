@@ -59,7 +59,7 @@ public struct TabBarView<T: TabItem>: View {
 
                         Text(item.name)
                             .tracking(1.0)
-                            .font(type: .montserrat, weight: .light, style: .caption2)
+                            .font(type: .poppins, weight: .light, style: .caption2)
                             .fixedSize()
                     }
                     .fixedSize(horizontal: false, vertical: true)

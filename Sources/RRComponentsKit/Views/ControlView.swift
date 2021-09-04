@@ -30,7 +30,7 @@ public struct ControlView: View {
                 Text(number)
                     .kerning(1.0)
                     .foregroundColor(.accentColor)
-                    .font(type: .montserrat, weight: .light, style: .caption2)
+                    .font(type: .poppins, weight: .light, style: .caption2)
             }
             
             WideStepper($value, onIncrement: onIncrement, onDecrement: onDecrement) {
