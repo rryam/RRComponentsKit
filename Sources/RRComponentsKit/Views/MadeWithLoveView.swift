@@ -7,9 +7,15 @@
 
 import SwiftUI
 
-struct MadeWithLoveView: View {
-    var body: some View {
-        Text("MADE WITH ❤️ BY RUDRANK RIYAM".lowercased())
+public struct MadeWithLoveView: View {
+    private var title: String
+    
+    public init(_ title: String = "MADE WITH ❤️ BY RUDRANK RIYAM") {
+        self.title = title
+    }
+    
+    public var body: some View {
+        Text(title.lowercased())
             .foregroundColor(.primary)
             .kerning(1)
             .font(type: .poppins, weight: .regular, style: .caption1)
