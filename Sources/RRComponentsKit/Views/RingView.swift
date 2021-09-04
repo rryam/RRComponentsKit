@@ -64,12 +64,11 @@ struct UserScoreView: View {
     }
     
     var body: some View {
-        GeometryReader { proxy in
-            let width = proxy.size.width
+        GeometryReader { geometry in
+            let width = geometry.size.width
             
-            ZStack(alignment: .center) {
+            ZStack {
                 ProgressRingView(progress: CGFloat(score) / 100)
-                    .frame(width: width, height: width)
                 VStack(spacing: 0) {
                     Text("SCORE".lowercased())
                         .kerning(1)
@@ -83,7 +82,7 @@ struct UserScoreView: View {
                 }
                 .accessibilityElement(children: .combine)
             }
-            .frame(width: width, height: width, alignment: .center)
+            .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
         }
     }
 }
