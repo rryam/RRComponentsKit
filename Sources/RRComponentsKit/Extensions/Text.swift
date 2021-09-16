@@ -39,9 +39,9 @@ extension Text {
             .kerning(1.0)
             .font(type: .poppins, weight: .regular, style: .caption1)
             .padding(8)
-            .background(RoundedRectangle(cornerRadius: Constants.cornerRadius / 2)
-                            .foregroundColor(Color.black.opacity(0.2)))
-            .padding(8)
+         //   .background(RoundedRectangle(cornerRadius: Constants.cornerRadius / 2)
+          //                  .foregroundColor(Color.black.opacity(0.2)))
+        //    .padding(8)
             .accessibility(addTraits: .isHeader)
     }
 }

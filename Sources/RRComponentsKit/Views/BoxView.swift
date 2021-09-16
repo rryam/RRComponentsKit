@@ -31,11 +31,23 @@ public struct BoxView<Content: View, Fill: ShapeStyle>: View {
                             .stroke(Color.stroke))
             
             VStack {
+                ZStack {
+                    VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
+                        .cornerRadius(Constants.cornerRadius / 2)
+                    
                 Text(header.rawValue.lowercased()).blurredBackgroundText()
+                }
+                .padding(8)
                 
                 content
             }
         }
         .padding(.bottom, 4)
     }
+}
+
+struct VisualEffectView: UIViewRepresentable {
+    var effect: UIVisualEffect?
+    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView { UIVisualEffectView() }
+    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) { uiView.effect = effect }
 }
