@@ -28,11 +28,11 @@ public struct ScoreView: View {
             Divider()
             
             VStack {
-                AnalyticsInfoView("HIGH \nSCORE".lowercased(), value: String(format: "%.1f", highScore), color: color)
+                AnalyticsInfoView("HIGH SCORE".lowercased(), value: String(format: "%.2f", highScore), color: color)
                 
                 Divider()
                 
-                AnalyticsInfoView("SECONDS \nTAKEN".lowercased(), value: String(describing: seconds), color: color)
+                AnalyticsInfoView("SECONDS TAKEN".lowercased(), value: String(describing: seconds), color: color)
             }
         }
         .padding(.top)
@@ -85,10 +85,10 @@ struct UserScoreView: View {
                         .font(type: .poppins, weight: .light, style: .caption1)
                         .foregroundColor(.primary)
                     
-                    Text(String(format: "%.1f", score))
+                    Text(String(format: "%.2f", score))
                         .kerning(1)
-                        .font(type: .poppins, weight: .black, style: .title1)
-                        .accessibility(label: Text("\(String(format: "%.1f", score)) points"))
+                        .font(type: .poppins, weight: .bold, style: .title1)
+                        .accessibility(label: Text("\(String(format: "%.2f", score)) points"))
                         .foregroundColor(color)
                 }
                 .accessibilityElement(children: .combine)
