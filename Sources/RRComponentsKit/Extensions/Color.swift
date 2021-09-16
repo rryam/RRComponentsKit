@@ -114,9 +114,7 @@ public extension Color {
 public extension Color {
     func prominence(value: Double = 0.2, scheme: ColorScheme) -> Color {
         let prominenceValue = scheme == .light ? value : -value
-        
-        print("CURRENT COLOR IS \(String(describing: self.description))")
-        
+                
         #if os(macOS)
         let components = NSColor(self).cgColor.components
         #else
@@ -125,9 +123,7 @@ public extension Color {
         let red: CGFloat = components?[0] ?? 0.0
         let green: CGFloat = components?[1] ?? 0.0
         let blue: CGFloat = components?[2] ?? 0.0
-        
-        print("PROMINENCE IS \(red) \(green) \(blue)")
-        
+                
         return Color(red: Double(red) - prominenceValue, green: Double(green) - prominenceValue, blue: Double(blue) - prominenceValue)
     }
 }
