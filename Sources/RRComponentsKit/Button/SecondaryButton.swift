@@ -11,17 +11,23 @@ public struct SecondaryGradientButton: View {
     private var color: Color
     private var title: String
     private var action: () -> ()
-    
+    private var disabled: Bool
+
     @Environment(\.colorScheme) var scheme
     
     var gradient: [Color] {
-        [color.prominence(scheme: scheme, reverse: true), color.prominence(scheme: scheme, reverse: true).opacity(0.8)]
+        if disabled {
+            return [.gray, .gray.opacity(0.8)]
+        } else {
+           return [color.prominence(scheme: scheme), color.prominence(scheme: scheme).opacity(0.8)]
+        }
     }
     
-    public init(_ title: String, _ color: Color, _ action: @escaping () -> Void) {
+    public init(title: String, color: Color, disabled: Bool, _ action: @escaping () -> Void) {
         self.title = title
         self.color = color
         self.action = action
+        self.disabled = disabled
     }
     
     public var body: some View {
