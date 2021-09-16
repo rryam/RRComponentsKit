@@ -112,8 +112,12 @@ public extension Color {
 
 // Returns a darker shade of the given color in light mode, and light share in dark mode
 public extension Color {
-    func prominence(value: Double = 0.2, scheme: ColorScheme) -> Color {
-        let prominenceValue = scheme == .light ? value : -value
+    func prominence(value: Double = 0.1, scheme: ColorScheme, reverse: Bool = false) -> Color {
+        var prominenceValue = scheme == .light ? value : -value
+        
+        if reverse {
+            prominenceValue = -prominenceValue
+        }
                 
         #if os(macOS)
         let components = NSColor(self).cgColor.components

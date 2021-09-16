@@ -8,23 +8,32 @@
 import SwiftUI
 
 public struct SecondaryGradientButton: View {
-    private var gradient: Gradient
+    private var color: Color
     private var title: String
     private var action: () -> ()
     
-    public init(_ title: String, _ gradient: Gradient, _ action: @escaping () -> Void) {
+    @Environment(\.colorScheme) var scheme
+    
+    var gradient: [Color] {
+        [color.prominence(scheme: scheme, reverse: true), color.prominence(scheme: scheme, reverse: true).opacity(0.8)]
+    }
+    
+    public init(_ title: String, _ color: Color, _ action: @escaping () -> Void) {
         self.title = title
-        self.gradient = gradient
+        self.color = color
         self.action = action
     }
     
     public var body: some View {
         Button(action: withAnimation { action }) {
             Text(title)
-                .foregroundColor(.primary)
+                .foregroundColor(color.prominence(scheme: scheme, reverse: true))
                 .buttonText()
         }
-        .buttonStyle(SecondaryButtonStyle())
+        .buttonStyle(SecondaryButtonStyle {
+            RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                .stroke(LinearGradient(gradient: Gradient(colors: gradient), startPoint: .top, endPoint: .bottom), lineWidth: 1.5)
+        })
     }
 }
 
@@ -43,7 +52,10 @@ public struct SecondaryButton: View {
                 .foregroundColor(.primary)
                 .buttonText()
         }
-        .buttonStyle(SecondaryButtonStyle())
+        .buttonStyle(SecondaryButtonStyle {
+            RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                .stroke(Color.accentColor, lineWidth: 1)
+        })
     }
 }
 

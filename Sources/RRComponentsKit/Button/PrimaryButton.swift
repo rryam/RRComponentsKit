@@ -8,13 +8,19 @@
 import SwiftUI
 
 public struct PrimaryGradientButton: View {
-    private var gradient: Gradient
     private var title: String
     private var action: () -> ()
+    private var color: Color
     
-    public init(_ title: String, _ gradient: Gradient, _ action: @escaping () -> Void) {
+    @Environment(\.colorScheme) var scheme
+
+    var gradient: [Color] {
+        [color.prominence(scheme: scheme), color.prominence(scheme: scheme).opacity(0.8)]
+    }
+    
+    public init(_ title: String, _ color: Color, _ action: @escaping () -> Void) {
         self.title = title
-        self.gradient = gradient
+        self.color = color
         self.action = action
     }
     
@@ -24,7 +30,7 @@ public struct PrimaryGradientButton: View {
                 .foregroundColor(.white)
                 .buttonText()
         }
-        .buttonStyle(PrimaryButtonStyle({ LinearGradient(gradient: gradient, startPoint: .top, endPoint: .bottom).cornerRadius(Constants.cornerRadius) }))
+        .buttonStyle(PrimaryButtonStyle({ LinearGradient(gradient: Gradient(colors: gradient), startPoint: .top, endPoint: .bottom).cornerRadius(Constants.cornerRadius) }))
     }
 }
 
