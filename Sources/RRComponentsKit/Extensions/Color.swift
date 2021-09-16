@@ -114,11 +114,11 @@ public extension Color {
 public extension Color {
     func prominence(value: Double = 0.15, scheme: ColorScheme, reverse: Bool = false) -> Color {
         var prominenceValue = scheme == .light ? value : -value
-        
-        if reverse {
-            prominenceValue = -prominenceValue
-        }
-                
+//        
+//        if reverse {
+//            prominenceValue = -prominenceValue
+//        }
+//                
         #if os(macOS)
         let components = NSColor(self).cgColor.components
         #else
