@@ -113,7 +113,7 @@ struct ProgressRingView: View {
     @Environment(\.colorScheme) var scheme
 
     var gradient: [Color] {
-        [foregroundColor.prominence(scheme: scheme), foregroundColor.prominence(scheme: scheme).opacity(0.5)]
+        [foregroundColor.prominence(scheme: scheme), foregroundColor.prominence(scheme: scheme).opacity(0.8)]
     }
     
     var body: some View {

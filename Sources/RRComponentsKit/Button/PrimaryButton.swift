@@ -27,7 +27,7 @@ public struct PrimaryGradientButton: View {
     public var body: some View {
         Button(action: withAnimation { action }) {
             Text(title)
-                .foregroundColor(.white)
+                .foregroundColor(.traitsBackground)
                 .buttonText()
         }
         .buttonStyle(PrimaryButtonStyle({ LinearGradient(gradient: Gradient(colors: gradient), startPoint: .top, endPoint: .bottom).cornerRadius(Constants.cornerRadius) }))
