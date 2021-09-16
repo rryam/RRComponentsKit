@@ -31,13 +31,12 @@ public struct BoxView<Content: View, Fill: ShapeStyle>: View {
                             .stroke(Color.stroke))
             
             VStack {
-                ZStack {
-                    VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
-                        .cornerRadius(Constants.cornerRadius / 2)
-                    
-                Text(header.rawValue.lowercased()).blurredBackgroundText()
-                }
-                .padding(8)
+                Text(header.rawValue.lowercased())
+                    .blurredBackgroundText()
+                    .padding(12)
+                    .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
+                                    .cornerRadius(Constants.cornerRadius / 2))
+                    .padding(12)
                 
                 content
             }
