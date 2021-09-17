@@ -17,7 +17,7 @@ public struct BoxView<Content: View, Fill: ShapeStyle>: View {
     let fill: Fill
     let content: Content
     
-    public init(_ header: BoxHeaderType, _ fill: Fill, @ViewBuilder content: () -> Content) {
+    public init(_ header: BoxHeaderType, _ fill: Fill, @ViewBuilder _ content: () -> Content) {
         self.header = header
         self.fill = fill
         self.content = content()
@@ -33,11 +33,10 @@ public struct BoxView<Content: View, Fill: ShapeStyle>: View {
             VStack {
                 Text(header.rawValue.lowercased())
                     .blurredBackgroundText()
-                    .padding(12)
-                    .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
-                                    .cornerRadius(Constants.cornerRadius / 2))
-                    .padding(12)
-                
+                    .background(
+                        NotchRectangle(corner: [.bottomLeft, .bottomRight], size: Constants.cornerRadius / 1.5)
+                                    .fill(Color.traitsBackground)
+                                    .padding(.top, -1))
                 content
             }
         }
@@ -49,4 +48,29 @@ struct VisualEffectView: UIViewRepresentable {
     var effect: UIVisualEffect?
     func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView { UIVisualEffectView() }
     func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) { uiView.effect = effect }
+}
+
+struct BoxView_Previews: PreviewProvider {
+    static var previews: some View {
+        GeometryReader { proxy in
+        BoxView(.target, .orange, {
+            Text("HELLO")
+        })
+                .frame(width: proxy.size.width, height: proxy.size.height / 3, alignment: .bottom)
+        }
+        .padding()
+        .preferredColorScheme(.light)
+
+    }
+}
+
+struct NotchRectangle: Shape {
+    var corner: UIRectCorner
+    var size: CGFloat
+    
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corner, cornerRadii: CGSize(width: size, height: size))
+        
+        return Path(path.cgPath)
+    }
 }

@@ -13,12 +13,12 @@ extension Text {
             .font(type: .poppins, weight: .black, style: .largeTitle)
             .multilineTextAlignment(.center)
     }
-
+    
     public func titleText() -> some View {
         self
             .font(type: .poppins, weight: .bold, style: .title1)
     }
-
+    
     public func largeTitleText(type: FontType, topPadding: CGFloat = 37) -> some View {
         self
             .foregroundColor(.primary)
@@ -35,9 +35,12 @@ extension Text {
     
     public func blurredBackgroundText() -> some View {
         self
-            .foregroundColor(.white)
+            .foregroundColor(.primary)
             .kerning(1.0)
             .font(type: .poppins, weight: .regular, style: .caption1)
             .accessibility(addTraits: .isHeader)
+            .padding(.horizontal)
+            .padding(.horizontal)
+            .padding(.bottom, 8)
     }
 }
