@@ -36,11 +36,19 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            ScoreView(4, 34, color: .green)
-            
-            ScoreView(94, 34, color: .brown)
-            ScoreView(54, 34, color: .red.prominence(scheme: scheme))
+            BoxView(.target, .red) {
+         //       Text("Hello")
+            }
+            BoxView(.yours, .orange) {
+         //       Text("Hello")
+            }
+          
+//            ScoreView(4, 34, color: .green)
+//
+//            ScoreView(94, 34, color: .brown)
+//            ScoreView(54, 34, color: .red.prominence(scheme: scheme))
         }
+        .padding()
         .accentColor(.red)
         //        VStack {
         //            NavTitleView("Title Goes here").padding(.horizontal)

@@ -13,22 +13,27 @@ public struct ControlView: View {
     let step: Double
     let hapticRange: Int
     
+    var showText: Bool
+    
 #if os(iOS)
     private let generator = UIImpactFeedbackGenerator(style: .medium)
 #endif
     
-    public init(_ value: Binding<Double>, step: Double = 255, range: Int = 10) {
+    public init(_ value: Binding<Double>, step: Double = 255, range: Int = 10, showText: Bool = true) {
         self.step = step
         self.hapticRange = range
         self._value = value
+        self.showText = showText
     }
     
     public var body: some View {
         VStack(spacing: 0) {
-            Text(String(format: "%.1f", value * step))
-                .kerning(1.0)
-                .foregroundColor(.accentColor)
-                .font(type: .poppins, weight: .light, style: .caption2)
+            if showText {
+                Text(String(format: "%.1f", value * step))
+                    .kerning(1.0)
+                    .foregroundColor(.accentColor)
+                    .font(type: .poppins, weight: .light, style: .caption2)
+            }
             
             WideStepper($value, onIncrement: onIncrement, onDecrement: onDecrement) {
                 WideSlider($value).padding(.horizontal)
