@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,7 +38,6 @@
 		0AB27D2F269A1AAE00817A15 /* WideStepperButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB27D2E269A1AAE00817A15 /* WideStepperButton.swift */; };
 		0AB27D31269A20D600817A15 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB27D30269A20D600817A15 /* ControlView.swift */; };
 		0AC1BB68261229350017CD43 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC1BB67261229350017CD43 /* NavigationButton.swift */; };
-		0AC74E86269B7F37004C0176 /* MovingNumbersView in Frameworks */ = {isa = PBXBuildFile; productRef = 0AC74E85269B7F37004C0176 /* MovingNumbersView */; settings = {ATTRIBUTES = (Required, ); }; };
 		OBJ_22 /* RRComponentsKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* RRComponentsKit.swift */; };
 		OBJ_29 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 /* End PBXBuildFile section */
@@ -117,7 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				0AC74E86269B7F37004C0176 /* MovingNumbersView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +294,6 @@
 			);
 			name = RRComponentsKit;
 			packageProductDependencies = (
-				0AC74E85269B7F37004C0176 /* MovingNumbersView */,
 			);
 			productName = RRComponentsKit;
 			productReference = "RRComponentsKit::RRComponentsKit::Product" /* RRComponentsKit.framework */;
@@ -342,7 +339,6 @@
 			);
 			mainGroup = OBJ_5;
 			packageReferences = (
-				0AC74E84269B7F37004C0176 /* XCRemoteSwiftPackageReference "MovingNumbersView" */,
 			);
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
@@ -484,10 +480,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = RRComponentsKitExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rudrankriyam.RRComponentsKitExample;
@@ -550,10 +543,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = RRComponentsKitExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rudrankriyam.RRComponentsKitExample;
@@ -576,10 +566,7 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RRComponentsKit.xcodeproj/RRComponentsKit_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -607,10 +594,7 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RRComponentsKit.xcodeproj/RRComponentsKit_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -696,8 +680,7 @@
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				USE_HEADERMAP = NO;
 			};
@@ -743,25 +726,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		0AC74E84269B7F37004C0176 /* XCRemoteSwiftPackageReference "MovingNumbersView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/aunnnn/MovingNumbersView.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		0AC74E85269B7F37004C0176 /* MovingNumbersView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0AC74E84269B7F37004C0176 /* XCRemoteSwiftPackageReference "MovingNumbersView" */;
-			productName = MovingNumbersView;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = OBJ_1 /* Project object */;
 }

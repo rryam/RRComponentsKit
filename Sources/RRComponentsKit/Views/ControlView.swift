@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import MovingNumbersView
 
 public struct ControlView: View {
     @State private var roundedNumber: Int = 0
@@ -26,12 +25,10 @@ public struct ControlView: View {
     
     public var body: some View {
         VStack(spacing: 0) {
-            MovingNumbersView(number: value * step, numberOfDecimalPlaces: 0) { number in
-                Text(number)
-                    .kerning(1.0)
-                    .foregroundColor(.accentColor)
-                    .font(type: .poppins, weight: .light, style: .caption2)
-            }
+            Text(String(format: "%.1f", value * step))
+                .kerning(1.0)
+                .foregroundColor(.accentColor)
+                .font(type: .poppins, weight: .light, style: .caption2)
             
             WideStepper($value, onIncrement: onIncrement, onDecrement: onDecrement) {
                 WideSlider($value).padding(.horizontal)
@@ -44,9 +41,9 @@ public struct ControlView: View {
             }
         }
         .onAppear {
-            #if os(iOS)
+#if os(iOS)
             generator.prepare()
-            #endif
+#endif
         }
     }
     
@@ -65,9 +62,9 @@ public struct ControlView: View {
     }
     
     private func hapticFeedback() {
-        #if os(iOS)
+#if os(iOS)
         generator.impactOccurred()
-        #endif
+#endif
     }
 }
 

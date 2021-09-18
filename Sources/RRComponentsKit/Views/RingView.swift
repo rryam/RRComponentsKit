@@ -39,7 +39,7 @@ public struct ScoreView: View {
     }
 }
 
-struct AnalyticsInfoView: View {
+public struct AnalyticsInfoView: View {
     private var title: String
     private var value: String
     private var color: Color
@@ -50,7 +50,7 @@ struct AnalyticsInfoView: View {
         self.color = color
     }
     
-    var body: some View {
+    public var body: some View {
         VStack {
             Text(title)
                 .kerning(1)
@@ -66,7 +66,7 @@ struct AnalyticsInfoView: View {
     }
 }
 
-struct UserScoreView: View {
+public struct UserScoreView: View {
     private var score: Double
     private var color: Color
     
@@ -75,7 +75,7 @@ struct UserScoreView: View {
         self.color = color
     }
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { geometry in
             ZStack {
                 ProgressRingView(progress: CGFloat(score) / 100, foregroundColor: color)
