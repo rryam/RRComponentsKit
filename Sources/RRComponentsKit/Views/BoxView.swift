@@ -34,10 +34,9 @@ public struct BoxView<Content: View, Fill: ShapeStyle>: View {
                 Text(header.rawValue.lowercased())
                     .blurredBackgroundText()
                     .background(
-                        NotchRectangle(corner: [.bottomRight], size: Constants.cornerRadius / 1.5)
-                            .fill(Color.white.opacity(0.15))
+                        NotchRectangle(corner: [.bottomLeft, .bottomRight], size: Constants.cornerRadius / 1.5)
+                            .fill(Color.white.opacity(0.25))
                                     .padding(.top, -1))
-                    .frame(maxWidth: .infinity, alignment: .leading)
                 content
             }
         }
