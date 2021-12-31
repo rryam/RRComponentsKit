@@ -30,7 +30,6 @@ extension Text {
     public func buttonText() -> some View {
         self
             .kerning(1.0)
-            .font(type: .poppins, weight: .semiBold, style: .headline)
     }
     
     public func blurredBackgroundText() -> some View {

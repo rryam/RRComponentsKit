@@ -13,7 +13,7 @@ public struct PrimaryGradientButton: View {
     private var color: Color
     
     @Environment(\.colorScheme) var scheme
-
+    
     var gradient: [Color] {
         [color.prominence(scheme: scheme), color.prominence(scheme: scheme).opacity(0.8)]
     }
@@ -28,7 +28,7 @@ public struct PrimaryGradientButton: View {
         Button(action: withAnimation { action }) {
             Text(title)
                 .foregroundColor(.traitsBackground)
-               // .buttonText()
+                .buttonText()
         }
         .buttonStyle(PrimaryButtonStyle({ LinearGradient(gradient: Gradient(colors: gradient), startPoint: .top, endPoint: .bottom).cornerRadius(Constants.cornerRadius) }))
     }
@@ -47,7 +47,7 @@ public struct PrimaryButton: View {
         Button(action: withAnimation { action }) {
             Text(title)
                 .foregroundColor(.white)
-            // .buttonText()
+                .buttonText()
         }
         .buttonStyle(PrimaryButtonStyle({ Color.accentColor.cornerRadius(Constants.cornerRadius) }))
     }
@@ -56,7 +56,7 @@ public struct PrimaryButton: View {
 struct ColoredButton_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            PrimaryButton("Evaluate", {})            
+            PrimaryButton("Evaluate", {})
         }
     }
 }

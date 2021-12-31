@@ -12,14 +12,14 @@ public struct SecondaryGradientButton: View {
     private var title: String
     private var action: () -> ()
     private var disabled: Bool
-
+    
     @Environment(\.colorScheme) var scheme
     
     var gradient: [Color] {
         if disabled {
             return [.gray, .gray.opacity(0.8)]
         } else {
-           return [color.prominence(scheme: scheme), color.prominence(scheme: scheme).opacity(0.8)]
+            return [color.prominence(scheme: scheme), color.prominence(scheme: scheme).opacity(0.8)]
         }
     }
     
@@ -34,7 +34,7 @@ public struct SecondaryGradientButton: View {
         Button(action: withAnimation { action }) {
             Text(title)
                 .foregroundColor(color.prominence(scheme: scheme, reverse: true))
-                // .buttonText()
+                .buttonText()
         }
         .buttonStyle(SecondaryButtonStyle {
             RoundedRectangle(cornerRadius: Constants.cornerRadius)
@@ -56,7 +56,7 @@ public struct SecondaryButton: View {
         Button(action: withAnimation { action }) {
             Text(title)
                 .foregroundColor(.primary)
-              //  .buttonText()
+                .buttonText()
         }
         .buttonStyle(SecondaryButtonStyle {
             RoundedRectangle(cornerRadius: Constants.cornerRadius)
