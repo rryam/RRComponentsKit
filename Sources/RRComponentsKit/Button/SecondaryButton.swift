@@ -34,7 +34,7 @@ public struct SecondaryGradientButton: View {
         Button(action: withAnimation { action }) {
             Text(title)
                 .foregroundColor(color.prominence(scheme: scheme, reverse: true))
-                .buttonText()
+                // .buttonText()
         }
         .buttonStyle(SecondaryButtonStyle {
             RoundedRectangle(cornerRadius: Constants.cornerRadius)
@@ -56,7 +56,7 @@ public struct SecondaryButton: View {
         Button(action: withAnimation { action }) {
             Text(title)
                 .foregroundColor(.primary)
-                .buttonText()
+              //  .buttonText()
         }
         .buttonStyle(SecondaryButtonStyle {
             RoundedRectangle(cornerRadius: Constants.cornerRadius)
