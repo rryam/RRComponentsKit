@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
 extension Text {
     public func font(type: FontType, weight: FontWeight, style: UIFont.TextStyle) -> Text {
         self.font(Font.custom(type.name + weight.name, size: UIFont.preferredFont(forTextStyle: style).pointSize))
