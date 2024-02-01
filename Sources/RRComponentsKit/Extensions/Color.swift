@@ -21,7 +21,7 @@ public extension Color {
     }
 }
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
 public extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {
         let red = CGFloat(red) / 255
