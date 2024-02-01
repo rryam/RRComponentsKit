@@ -10,7 +10,7 @@ import SwiftUI
 public struct GradientButton: View {
     private var title: String
     
-    #if os(iOS)
+    #if os(iOS) || os(visionOS)
     private var font: UIFont.TextStyle = .headline
     #else
     private var font: NSFont.TextStyle = .headline
