@@ -23,7 +23,7 @@ public struct GradientButton: View {
     }
     
     public var body: some View {
-        Button(action: withAnimation { action }) {
+        Button(action: action) {
             Text(title)
                 .kerning(1.0)
                 .font(type: .poppins, weight: .light, style: .callout)

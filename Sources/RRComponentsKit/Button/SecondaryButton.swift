@@ -31,7 +31,7 @@ public struct SecondaryGradientButton: View {
     }
     
     public var body: some View {
-        Button(action: withAnimation { action }) {
+        Button(action: action) {
             Text(title)
                 .foregroundColor(color.prominence(scheme: scheme, reverse: true))
                 .buttonText()
@@ -53,7 +53,7 @@ public struct SecondaryButton: View {
     }
     
     public var body: some View {
-        Button(action: withAnimation { action }) {
+        Button(action: action) {
             Text(title)
                 .foregroundColor(.primary)
                 .buttonText()

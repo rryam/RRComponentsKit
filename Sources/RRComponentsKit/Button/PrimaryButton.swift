@@ -25,7 +25,7 @@ public struct PrimaryGradientButton: View {
     }
     
     public var body: some View {
-        Button(action: withAnimation { action }) {
+        Button(action: action) {
             Text(title)
                 .foregroundColor(.traitsBackground)
                 .buttonText()
@@ -44,7 +44,7 @@ public struct PrimaryButton: View {
     }
     
     public var body: some View {
-        Button(action: withAnimation { action }) {
+        Button(action: action) {
             Text(title)
                 .foregroundColor(.white)
                 .buttonText()
