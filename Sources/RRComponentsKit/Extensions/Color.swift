@@ -113,7 +113,7 @@ public extension Color {
 // Returns a darker shade of the given color in light mode, and light share in dark mode
 public extension Color {
     func prominence(value: Double = 0.15, scheme: ColorScheme, reverse: Bool = false) -> Color {
-        var prominenceValue = scheme == .light ? value : -value
+      let prominenceValue = scheme == .light ? value : -value
 //        
 //        if reverse {
 //            prominenceValue = -prominenceValue

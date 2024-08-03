@@ -28,16 +28,23 @@ public struct ControlView: View {
     
     public var body: some View {
         VStack(spacing: 0) {
-            if showText {
-                Text(String(format: "%.1f", value * step))
-                    .kerning(1.0)
-                    .foregroundColor(.accentColor)
-                    .font(type: .poppins, weight: .light, style: .caption2)
+            WideStepper($value, onIncrement: onIncrement, onDecrement: onDecrement) {
+                if showText {
+                    Spacer()
+                    
+                    // OffsetText("hello", font: .appButton)
+                    
+                    Text(String(format: "%.1f", value * step))
+                        .kerning(1.0)
+                        .foregroundColor(.accentColor)
+                        .font(type: .poppins, weight: .light, style: .caption2)
+                    
+                    Spacer()
+                }
             }
             
-            WideStepper($value, onIncrement: onIncrement, onDecrement: onDecrement) {
-                WideSlider($value).padding(.horizontal)
-            }
+            WideSlider($value)
+                .padding(.vertical, 8)
         }
         .onChange(of: value) { _ in
             if Int(value * step) != roundedNumber && Int(value * step) % hapticRange == 0 {

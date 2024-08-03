@@ -88,7 +88,7 @@ struct ControlsView: View {
     @State private var blue: Double = .random(in: 0...1)
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ControlView($red).accentColor(.red)
             
             ControlView($green).accentColor(.green)

@@ -21,6 +21,6 @@ public struct PrimaryButtonStyle<Background: View>: ButtonStyle {
             .background(background)
             .scaleEffect(configuration.isPressed ? 0.98 : 1.0)
             .opacity(configuration.isPressed ? 0.9 : 1.0)
-            .padding(.top)
+            .padding(.top, 8)
     }
 }

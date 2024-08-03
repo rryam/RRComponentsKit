@@ -34,10 +34,12 @@ public struct BoxView<Content: View, Fill: ShapeStyle>: View {
             VStack {
                 Text(header.rawValue.lowercased())
                     .blurredBackgroundText()
-                    .background(
-                        NotchRectangle(corner: [.bottomLeft, .bottomRight], size: Constants.cornerRadius / 1.5)
-                            .fill(Color.white.opacity(0.25))
-                                    .padding(.top, -1))
+
+                    .padding(8)
+//                    .background(
+//                        NotchRectangle(corner: [.bottomLeft, .bottomRight], size: Constants.cornerRadius / 1.5)
+//                            .fill(Color.white.opacity(0.25))
+//                                    .padding(.top, -1))
                 content
             }
         }
